@@ -29,6 +29,8 @@ import WeOffer from '../assets/weOfferbck.jpg';
 import ScrollReveal from '../Animations/ScrollReveal';
 import ScrollFloat from '../Animations/ScrollFloat';
 import AnimatedContent from '../Animations/AnimatedContent';
+import Individuals from '../assets/individuality.png';
+import Institute from '../assets/institute.png';
 
 const HeroSection = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -153,19 +155,19 @@ const HomePage = () => {
       title: 'WEB DEVELOPMENT',
       icon: ServiceFour,
       description: 'Web development involves designing and building websites, ensuring functionality, responsiveness, and user-friendly experiences.',
-      link: '/services/web-development'
+      link: '/services/website-development'
     },
     {
       title: 'MOBILE APP DEVELOPMENT',
       icon: ServiceThree,
       description: 'Mobile app development is the process of creating mobile applications for iOS and Android platforms, ensuring excellent performance and user-friendly interfaces.',
-      link: '/services/mobile-app-development'
+      link: '/services/app-development'
     },
     {
-      title: 'WEB DESIGN',
+      title: 'UI/UX DESIGN',
       icon: ServiceOne,
       description: 'UX/UI web design focuses on creating intuitive, attractive, and highly user-friendly websites that enhance your experience and engagement.',
-      link: '/services/web-design'
+      link: '/services/ui-ux-design'
     },
     {
       title: 'DIGITAL MARKETING',
@@ -176,56 +178,70 @@ const HomePage = () => {
   ];
 
   const sectors = [
-    {
-      title: 'Startups',
-      icon: '/icons/startup.png', // replace with your actual icon path
-    },
-    {
-      title: 'Enterprises',
-      icon: '/icons/enterprise.png',
-    },
-    {
-      title: 'Organization',
-      icon: '/icons/organization.png',
-    },
-    {
-      title: 'Individuals',
-      icon: '/icons/individuals.png',
-    },
-    {
-      title: 'Institutions',
-      icon: '/icons/institution.png',
-    },
-    {
-      title: 'Retailers',
-      icon: '/icons/retailers.png',
-    },
-  ];
-  const provides = [
-    { title: 'Career', icon: '/icons/career.png' },
-    { title: 'Fintech', icon: '/icons/fintech.png' },
-    { title: 'ECommerce', icon: '/icons/ecommerce.png' },
-    { title: 'Healthcare', icon: '/icons/healthcare.png' },
-    { title: 'Social', icon: '/icons/social.png' },
-    { title: 'Fitness', icon: '/icons/fitness.png' },
-    { title: 'Food Delivery', icon: '/icons/food.png' },
-    { title: 'Real Estate', icon: '/icons/realestate.png' },
-    { title: 'Sports', icon: '/icons/sports.png' },
-    { title: 'Business', icon: '/icons/business.png' },
-    { title: 'Education', icon: '/icons/education.png' },
-    { title: 'Entertainment', icon: '/icons/entertainment.png' },
-    { title: 'Travel', icon: '/icons/travel.png' },
-    { title: 'Dating', icon: '/icons/dating.png' },
-    { title: 'Transport', icon: '/icons/transport.png' },
-    { title: 'Grocery', icon: '/icons/grocery.png' },
-  ];
+  {
+    title: 'Startups',
+    icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135823.png', // startup/idea
+  },
+  {
+    title: 'Enterprises',
+    icon: 'https://cdn-icons-png.flaticon.com/512/3063/3063825.png', // enterprise/company
+  },
+  {
+    title: 'Organization',
+    icon: 'https://cdn-icons-png.flaticon.com/512/2420/2420504.png', // community/org
+  },
+  {
+    title: 'Individuals',
+    icon: 'https://cdn-icons-png.flaticon.com/512/921/921347.png', // user
+  },
+  {
+    title: 'Institutions',
+    icon: 'https://cdn-icons-png.flaticon.com/512/2784/2784445.png', // institute/education
+  },
+  {
+    title: 'Retailers',
+    icon: 'https://cdn-icons-png.flaticon.com/512/3075/3075977.png', // store/retailer
+  },
+];
 
-  const unique = [
-    { title: 'Ideators', icon: '/icons/unique.png' },
-    { title: 'Innovators', icon: '/icons/unique.png' },
-    { title: 'Value Givers', icon: '/icons/unique.png' },
-    { title: 'Problem Solvers', icon: '/icons/unique.png' },
-  ];
+  const provides = [
+  { title: 'Career', icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' },
+  { title: 'Fintech', icon: 'https://cdn-icons-png.flaticon.com/512/284/284579.png' },
+  { title: 'ECommerce', icon: 'https://cdn-icons-png.flaticon.com/512/4290/4290854.png' },
+  { title: 'Healthcare', icon: 'https://cdn-icons-png.flaticon.com/512/1046/1046784.png' },
+  { title: 'Social', icon: 'https://cdn-icons-png.flaticon.com/512/145/145802.png' },
+  { title: 'Fitness', icon: 'https://cdn-icons-png.flaticon.com/512/2965/2965567.png' },
+  { title: 'Food Delivery', icon: 'https://cdn-icons-png.flaticon.com/512/1046/1046786.png' },
+  { title: 'Real Estate', icon: 'https://cdn-icons-png.flaticon.com/512/2356/2356781.png' },
+  { title: 'Sports', icon: 'https://cdn-icons-png.flaticon.com/512/727/727399.png' },
+  { title: 'Business', icon: 'https://cdn-icons-png.flaticon.com/512/595/595067.png' },
+  { title: 'Education', icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png' },
+  { title: 'Entertainment', icon: 'https://cdn-icons-png.flaticon.com/512/833/833472.png' },
+  { title: 'Travel', icon: 'https://cdn-icons-png.flaticon.com/512/201/201623.png' },
+  { title: 'Dating', icon: 'https://cdn-icons-png.flaticon.com/512/1077/1077035.png' },
+  { title: 'Transport', icon: 'https://cdn-icons-png.flaticon.com/512/883/883703.png' },
+  { title: 'Grocery', icon: 'https://cdn-icons-png.flaticon.com/512/2331/2331970.png' },
+];
+
+ const unique = [
+  {
+    title: 'Ideators',
+    icon: 'https://cdn-icons-png.flaticon.com/512/3048/3048394.png', // Light bulb / idea
+  },
+  {
+    title: 'Innovators',
+    icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135789.png', // Innovation gear
+  },
+  {
+    title: 'Value Givers',
+    icon: 'https://cdn-icons-png.flaticon.com/512/9296/9296900.png', // Hand giving
+  },
+  {
+    title: 'Problem Solvers',
+    icon: 'https://cdn-icons-png.flaticon.com/512/2331/2331970.png', // Puzzle piece
+  },
+];
+
 
   const features = [
     {

@@ -9,6 +9,10 @@ import AboutUs from './component/AboutUs';
 import Contact from './component/Contact';
 import DigitalMarketing from './component/DigitalMarketing';
 import WordPress from './component/WordPress';
+import UiUx from './component/UiUx';
+import Career from './component/CareerPage';
+import ScrollToTop from './component/ScrollToTop';
+import ApplicationDevelopment from './component/ApplicationDevelopment';
 
 const theme = createTheme({
   palette: {
@@ -65,15 +69,18 @@ function App() {
   return (
     <>
       <Header />
-      
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<AboutUs/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services/website-development" element={<WebDevlop />} />
+          <Route path="/services/app-development" element={<ApplicationDevelopment />} />
           <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/services/wordpress-development" element={<WordPress />} />
+          <Route path='/services/ui-ux-design' element={<UiUx/>} ></Route>
+          <Route path='/career' element={<Career/>} ></Route> 
         </Routes>
       
       <Footer />

@@ -40,10 +40,11 @@ const WordPress = () => {
 
   const vsoftPurple = '#803082';
   const vsoftGray = '#999999';
-   const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState(null);
   const handleContactClick = () => {
     navigate('/contact'); // Make sure the /contact route exists
   };
+  
   const services = [
     {
       title: "WordPress Installation & Configuration",
@@ -77,20 +78,20 @@ const WordPress = () => {
   ];
 
   const projects = [{
-      id: 1,
-      title: "MKM Jewellery",
-      image: WordpressOne,
-      link: "https://www.mkmthangamaligai.com/",
-      color: "#803082"
-    },
-  
-    {
-      id: 2,
-      title: "Durga Traders",
-      image: WordpressTwo,
-      link: "https://durgatraders.thevsoft.com/",
-      color: "#803082"
-    },
+    id: 1,
+    title: "Gayra Construction",
+    image: WordpressOne,
+    link: "http://www.gayraconstructions.com/",
+    color: "#803082"
+  },
+
+  {
+    id: 2,
+    title: "Nivetha Interior",
+    image: WordpressTwo,
+    link: "https://nivedhainterior.com/",
+    color: "#803082"
+  },
   ]
 
   return (
@@ -390,86 +391,110 @@ const WordPress = () => {
       </Box>
 
       <Box py={8}>
-              <Container maxWidth="lg">
-                <Typography variant="h4" fontWeight="bold" align="center" gutterBottom>
-                  <ScrollFloat
-                    animationDuration={1}
-                    ease='back.inOut(2)'
-                    scrollStart='center bottom+=50%'
-                    scrollEnd='bottom bottom-=40%'
-                    stagger={0.03}
-                  >
-                    Our Recent Projects
-                  </ScrollFloat>
-                </Typography>
-                <Grid
-                  container
-                  spacing={4}
-                  mt={4}
-                  justifyContent="center"
-                >
-                  {projects.map((project) => (
-                    <Grid item xs={12} sm={6} md={4} key={project.id} display="flex" justifyContent="center">
-                      <Card
-                        onMouseEnter={() => setHoveredCard(project.id)}
-                        onMouseLeave={() => setHoveredCard(null)}
-                        sx={{
-                          width: '100%',
-                          maxWidth: 300,
-                          aspectRatio: '1 / 1',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'space-between',
-                          transition: 'transform 0.3s',
-                          transform: hoveredCard === project.id ? 'translateY(-8px)' : 'none',
-                        }}
-                      >
-                        <CardMedia
-                          component="img"
-                          height="170"
-                          image={project.image}
-                          alt={project.title}
-                          sx={{ objectFit: 'cover' }}
-                        />
-                        <CardContent
-                          sx={{
-                            backgroundColor: project.color,
-                            color: '#fff',
-                            flexGrow: 1,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            '&:hover': {
-                              backgroundColor: '#999999',
-                            },
-                          }}
-                        >
-                          <Typography
-                            variant="h6"
-                            fontWeight="bold"
-                            sx={{
-                              transition: 'transform 0.3s',
-                              transform: hoveredCard === project.id ? 'translateY(-4px)' : 'none',
-                            }}
-                          >
-                            {project.title}
-                          </Typography>
-      
-                          <Box
-                            mt="auto"
-                            pt={2}
-                            sx={{
-                              opacity: hoveredCard === project.id ? 1 : 0,
-                              transition: 'opacity 0.3s',
-                            }}
-                          >
-                          </Box>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Container>
-            </Box>
+        <Container maxWidth="lg">
+          <Typography variant="h4" fontWeight="bold" align="center" gutterBottom>
+            <ScrollFloat
+              animationDuration={1}
+              ease='back.inOut(2)'
+              scrollStart='center bottom+=50%'
+              scrollEnd='bottom bottom-=40%'
+              stagger={0.03}
+            >
+              Our Recent Projects
+            </ScrollFloat>
+          </Typography>
+         <Grid
+  container
+  spacing={4}
+  mt={4}
+  justifyContent="center"
+>
+  {projects.map((project) => (
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      key={project.id}
+      display="flex"
+      justifyContent="center"
+    >
+      <Card
+        onMouseEnter={() => setHoveredCard(project.id)}
+        onMouseLeave={() => setHoveredCard(null)}
+        sx={{
+          width: '100%',
+          maxWidth: 340,
+          aspectRatio: '1 / 1', // Ensures square card
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          transition: 'transform 0.3s',
+          transform: hoveredCard === project.id ? 'translateY(-8px)' : 'none',
+          boxShadow: hoveredCard === project.id ? 6 : 1,
+        }}
+      >
+        <CardMedia
+          component="img"
+          image={project.image}
+          alt={project.title}
+          sx={{
+            width: '100%',
+            height: '50%',
+            objectFit: 'cover',
+          }}
+        />
+
+        <CardContent
+          sx={{
+            backgroundColor: project.color,
+            color: '#fff',
+            height: '50%',
+            display: 'flex',
+            flexDirection: 'column',
+            padding: 2,
+            '&:hover': {
+              backgroundColor: '#999999',
+            },
+          }}
+        >
+          <Typography
+            variant="h6"
+            fontWeight="bold"
+            gutterBottom
+            sx={{
+              transition: 'transform 0.3s',
+              transform: hoveredCard === project.id ? 'translateY(-4px)' : 'none',
+            }}
+          >
+            {project.title}
+          </Typography>
+
+          <Box
+            mt="auto"
+            sx={{
+              opacity: 1,
+              transition: 'opacity 0.3s',
+            }}
+          >
+            <Typography variant="body2">
+              Some details or{' '}
+              <a
+                style={{ color: '#fff', textDecoration: 'underline' }}
+                href={project.link}
+              >
+                View More
+              </a>
+            </Typography>
+          </Box>
+        </CardContent>
+      </Card>
+    </Grid>
+  ))}
+</Grid>
+
+        </Container>
+      </Box>
     </>
   )
 }

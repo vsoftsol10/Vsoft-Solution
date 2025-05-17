@@ -12,8 +12,19 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  // Handle dropdown link click - close menu and dropdown
+  const handleDropdownLinkClick = () => {
+    setMenuOpen(false);
+    setActiveDropdown(null);
   };
 
   // Close menu when clicking outside
@@ -60,13 +71,22 @@ function Header() {
         </div>
         
         <div className={`nav-wrapper ${menuOpen ? "menu-open" : ""}`}>
+          {/* Close button visible only on mobile */}
+          <button 
+            className="close-menu-btn"
+            onClick={closeMenu}
+            aria-label="Close menu"
+          >
+            <span className="close-icon">×</span>
+          </button>
+          
           <nav ref={navRef} className="navigation">
             <ul className="nav-menu">
               <li className="nav-item">
-                <Link to="/home" className="nav-link">Home</Link>
+                <Link to="/home" className="nav-link" onClick={closeMenu}>Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">About us</Link>
+                <Link to="/about" className="nav-link" onClick={closeMenu}>About us</Link>
               </li>
               <li className="nav-item dropdown-parent">
                 <button 
@@ -79,16 +99,22 @@ function Header() {
                 <ul className={`dropdown-menu ${activeDropdown === 0 ? "show" : ""}`}>
                   {serviceOptions[0].dropdown.map((item, index) => (
                     <li key={index} className="dropdown-item">
-                      <Link to={item.path} className="dropdown-link">{item.name}</Link>
+                      <Link 
+                        to={item.path} 
+                        className="dropdown-link" 
+                        onClick={handleDropdownLinkClick}
+                      >
+                        {item.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </li>
               <li className="nav-item">
-                <Link to="/career" className="nav-link">Career</Link>
+                <Link to="/career" className="nav-link" onClick={closeMenu}>Career</Link>
               </li>
               <li className="nav-item contact-btn-container">
-                <Link to="/contact" className="contact-btn">Contact us</Link>
+                <Link to="/contact" className="contact-btn" onClick={closeMenu}>Contact us</Link>
               </li>
             </ul>
           </nav>

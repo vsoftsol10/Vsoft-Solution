@@ -296,7 +296,7 @@ const DigitalMarketing = () => {
             <AnimatedContent
               distance={180}
               direction="horizontal"
-              reverse={true}
+              reverse={false}
               config={{ tension: 100, friction: 80 }}
               initialOpacity={0.1}
               animateOpacity
