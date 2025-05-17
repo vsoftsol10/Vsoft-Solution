@@ -44,6 +44,11 @@ const CareerPage = () => {
     setExpanded(isExpanded ? panel : false);
   };
 
+  // Google Form URLs for each position
+  const googleFormUrlWP = "https://forms.gle/1mqqGZgXT6Z7YBEF6";
+  const googleFormUrlDM = 'https://forms.gle/v3kDk8jFwW87c6oQA';
+  const googleFormUrlDesign = 'https://forms.gle/DPzvr1XZHGUG1RdV6';
+
   const openings = [
     {
       id: 'wp-shopify',
@@ -57,7 +62,8 @@ const CareerPage = () => {
         'Passion for learning new technologies'
       ],
       location: 'Remote',
-      type: 'Internship'
+      type: 'Internship',
+      formUrl: googleFormUrlWP
     },
     {
       id: 'digital-marketing',
@@ -71,7 +77,8 @@ const CareerPage = () => {
         'Ability to work in a fast-paced environment'
       ],
       location: 'Remote',
-      type: 'Internship'
+      type: 'Internship',
+      formUrl: googleFormUrlDM
     },
     {
       id: 'graphic-designer',
@@ -86,9 +93,15 @@ const CareerPage = () => {
         'Excellent communication skills'
       ],
       location: 'Remote/Hybrid',
-      type: 'Full-time'
+      type: 'Full-time',
+      formUrl: googleFormUrlDesign
     }
   ];
+
+  // Function to open the specific Google Form URL for each job
+  const openGoogleForm = (url) => {
+    window.open(url, '_blank');
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -153,7 +166,8 @@ const CareerPage = () => {
                   <Chip 
                     label="Apply Now" 
                     color="primary" 
-                    sx={{ fontWeight: 'bold', borderRadius: 1 }}
+                    sx={{ fontWeight: 'bold', borderRadius: 1, cursor: 'pointer' }}
+                    onClick={() => openGoogleForm(job.formUrl)}
                   />
                 </Box>
                 
@@ -197,10 +211,9 @@ const CareerPage = () => {
                   variant="contained" 
                   color="primary" 
                   endIcon={<Send />}
-                  component={Link}
-                  href="mailto:careers@vsoftsolutions.com"
+                  onClick={() => openGoogleForm(job.formUrl)}
                 >
-                  Apply via Email
+                  Apply Now
                 </Button>
               </CardActions>
             </Card>
@@ -214,8 +227,8 @@ const CareerPage = () => {
         </Typography>
         <Typography variant="body1" paragraph sx={{ maxWidth: 600, mx: 'auto' }}>
           VSoft Solutions is always looking for talented individuals to join our team. Send your resume to 
-          <Link href="mailto:careers@vsoftsolutions.com" sx={{ mx: 1, color: vsoftPurple }}>
-            	info@thevsoft.com
+          <Link href="mailto:info@thevsoft.com" sx={{ mx: 1, color: vsoftPurple }}>
+            info@thevsoft.com
           </Link>
           and tell us how you can contribute.
         </Typography>
