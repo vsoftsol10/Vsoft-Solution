@@ -35,9 +35,10 @@ import BannerWP from '../assets/BannerWP.png';
 import WordpressOne from '../assets/Wordpress1.jpg';
 import WordpressTwo from '../assets/Wordpress2.jpg';
 import ScrollFloat from '../Animations/ScrollFloat';
-import { ArrowForward } from '@mui/icons-material';
-const WordPress = () => {
+import { ArrowForward, People } from '@mui/icons-material';
 
+const WordPress = () => {
+  const navigate = useNavigate();
   const vsoftPurple = '#803082';
   const vsoftGray = '#999999';
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -84,7 +85,6 @@ const WordPress = () => {
     link: "http://www.gayraconstructions.com/",
     color: "#803082"
   },
-
   {
     id: 2,
     title: "Nivetha Interior",
@@ -346,7 +346,7 @@ const WordPress = () => {
         </Box>
       </Box>
 
-      <Box py={8} sx={{ backgroundColor: '#f4f4f4' }}>
+      <Box py={8} sx={{ backgroundColor: '#f8f8f8' }}>
         <Container maxWidth="lg">
           <Typography variant="h4" fontWeight="bold" align="center" gutterBottom>
             <ScrollFloat
@@ -390,109 +390,63 @@ const WordPress = () => {
         </Grid>
       </Box>
 
-      <Box py={8}>
+      {/* Client Approach Section */}
+      <Box py={8} sx={{ backgroundColor: '#fffff' }}>
         <Container maxWidth="lg">
-          <Typography variant="h4" fontWeight="bold" align="center" gutterBottom>
-            <ScrollFloat
-              animationDuration={1}
-              ease='back.inOut(2)'
-              scrollStart='center bottom+=50%'
-              scrollEnd='bottom bottom-=40%'
-              stagger={0.03}
+          <Box 
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center'
+            }}
+          >
+            
+            
+            <Typography 
+              variant="h3" 
+              fontWeight="bold" 
+              mb={3}
+              sx={{ 
+                fontSize: { xs: '2rem', md: '3rem' },
+                background: 'linear-gradient(90deg, #2193b0, #6dd5ed)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
             >
-              Our Recent Projects
-            </ScrollFloat>
-          </Typography>
-         <Grid
-  container
-  spacing={4}
-  mt={4}
-  justifyContent="center"
->
-  {projects.map((project) => (
-    <Grid
-      item
-      xs={12}
-      sm={6}
-      md={4}
-      key={project.id}
-      display="flex"
-      justifyContent="center"
-    >
-      <Card
-        onMouseEnter={() => setHoveredCard(project.id)}
-        onMouseLeave={() => setHoveredCard(null)}
-        sx={{
-          width: '100%',
-          maxWidth: 340,
-          aspectRatio: '1 / 1', // Ensures square card
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          transition: 'transform 0.3s',
-          transform: hoveredCard === project.id ? 'translateY(-8px)' : 'none',
-          boxShadow: hoveredCard === project.id ? 6 : 1,
-        }}
-      >
-        <CardMedia
-          component="img"
-          image={project.image}
-          alt={project.title}
-          sx={{
-            width: '100%',
-            height: '50%',
-            objectFit: 'cover',
-          }}
-        />
-
-        <CardContent
-          sx={{
-            backgroundColor: project.color,
-            color: '#fff',
-            height: '50%',
-            display: 'flex',
-            flexDirection: 'column',
-            padding: 2,
-            '&:hover': {
-              backgroundColor: '#999999',
-            },
-          }}
-        >
-          <Typography
-            variant="h6"
-            fontWeight="bold"
-            gutterBottom
-            sx={{
-              transition: 'transform 0.3s',
-              transform: hoveredCard === project.id ? 'translateY(-4px)' : 'none',
-            }}
-          >
-            {project.title}
-          </Typography>
-
-          <Box
-            mt="auto"
-            sx={{
-              opacity: 1,
-              transition: 'opacity 0.3s',
-            }}
-          >
-            <Typography variant="body2">
-              Some details or{' '}
-              <a
-                style={{ color: '#fff', textDecoration: 'underline' }}
-                href={project.link}
-              >
-                View More
-              </a>
+              50+ Clients Approached Us
             </Typography>
+            
+            <Typography 
+              variant="body1" 
+              mb={4} 
+              sx={{ 
+                maxWidth: 700,
+                fontSize: { xs: '1rem', md: '1.1rem' },
+                color: '#555'
+              }}
+            >
+              In under a year, our design agency has attracted over 50 clients across diverse industries, from startups to established brands. Our unique blend of creativity and strategic thinking has made us the go-to partner for companies looking to elevate their visual presence. Our collaborative approach ensures that each project not only meets but exceeds expectations, turning clients into long-term partners who return for all their design needs.
+            </Typography>
+            
+            <Button 
+              variant="contained"
+              sx={{ 
+                bgcolor: '#5c245c',
+                borderRadius: 2,
+                px: 4,
+                py: 1.5,
+                textTransform: 'none',
+                fontSize: '1rem',
+                '&:hover': {
+                  bgcolor: '#7a337a'
+                }
+              }}
+              onClick={handleContactClick}
+            >
+              Work With Us
+            </Button>
           </Box>
-        </CardContent>
-      </Card>
-    </Grid>
-  ))}
-</Grid>
-
         </Container>
       </Box>
     </>

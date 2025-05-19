@@ -23,7 +23,7 @@ import teamImage from '../assets/teamImage.png';
 import ServiceOne from '../assets/service1.png';
 import ServiceTwo from '../assets/service2.png';
 import ServiceThree from '../assets/service3.png';
-import ServiceFour from '../assets/service4.png';
+import ServiceFour from '../assets/service1.jpg';
 import ServiceBck from '../assets/service-bck.png';
 import WeOffer from '../assets/weOfferbck.jpg';
 import ScrollReveal from '../Animations/ScrollReveal';
@@ -85,18 +85,19 @@ const IconContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: theme.spacing(2, 0),
+  padding: theme.spacing(0.4, 0),
 }));
 
 const CircleIcon = styled(Box)(({ theme }) => ({
-  width: '120px',
-  height: '120px',
-  borderRadius: '50%',
+  width: '98%',
+  height: '150px',
+  borderRadius: '0%',
+  borderTopLeftRadius:'10px',
+  borderTopRightRadius:'10px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden',
-  border: '3px solid #7a337a',
 }));
 
 const ReadMoreButton = styled(Button)(({ theme }) => ({
@@ -159,19 +160,19 @@ const HomePage = () => {
     },
     {
       title: 'MOBILE APP DEVELOPMENT',
-      icon: ServiceThree,
+      icon: ServiceTwo ,
       description: 'Mobile app development is the process of creating mobile applications for iOS and Android platforms, ensuring excellent performance and user-friendly interfaces.',
       link: '/services/app-development'
     },
     {
       title: 'UI/UX DESIGN',
-      icon: ServiceOne,
+      icon: ServiceThree ,
       description: 'UX/UI web design focuses on creating intuitive, attractive, and highly user-friendly websites that enhance your experience and engagement.',
       link: '/services/ui-ux-design'
     },
     {
       title: 'DIGITAL MARKETING',
-      icon: ServiceTwo,
+      icon: ServiceOne,
       description: 'Digital marketing combines social media marketing, SEO, paid ads to drive engagement and business growth.',
       link: '/services/digital-marketing'
     }
@@ -311,7 +312,7 @@ const HomePage = () => {
                   variant="contained"
                   size="large"
                 >
-                  GET TOUCH
+                  GET IN TOUCH
                 </GetTouchButton>
               </Box>
             </Box>
