@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
 import {
     Box,
     Container,
@@ -8,12 +8,9 @@ import {
     Button,
     Paper,
     Grid,
-    Card,
-    CardContent,
-    CardActionArea,
-    CardMedia,
     useTheme,
 } from '@mui/material';
+import { gsap } from 'gsap';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import WhyApp from '../assets/whyusapp.png'
 import { useNavigate } from 'react-router-dom';
@@ -24,14 +21,14 @@ import HomeIcon from '@mui/icons-material/Home';
 import WebIcon from '@mui/icons-material/Language';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import AppBack from '../assets/AppBck.jpg';
-import AppBanner from '../assets/AppBanner.png';
+import AppBanner from '../assets/AppBanner.webp';
 import HTML from '../assets/HTML.png';
 import CSS from '../assets/CSS.png';
 import JS from '../assets/javascript.png';
 import ReactNative from '../assets/Reac-Native.png';
 import Nodejs from '../assets/node-js.png';
 import MongoDB from '../assets/MongoDB.png';
-import Bootstrap from '../assets/Bootstrap.png';
+import Bootstrap from '../assets/Bootstrap.jpg';
 import Mui from '../assets/MUI.png';
 
 const ApplicationDevelopment = () => {
@@ -44,6 +41,20 @@ const ApplicationDevelopment = () => {
     const handleContactClick = () => {
         navigate('/contact'); // Now navigate is properly defined
     };
+    const headingRef = useRef();
+
+    useEffect(() => {
+        gsap.fromTo(
+            headingRef.current,
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: 'power3.out',
+            }
+        );
+    }, []);
 
     const techServices = [
         { name: "iOS Development", icon: <FaApple className="text-white text-3xl" /> },
@@ -119,19 +130,16 @@ const ApplicationDevelopment = () => {
                     </Breadcrumbs>
 
                     {/* Main Text */}
-                    <Typography variant="h4" fontWeight="bold">
-                        <AnimatedContent
-                            distance={180}
-                            direction="horizontal"
-                            reverse={false}
-                            config={{ tension: 100, friction: 80 }}
-                            initialOpacity={0.1}
-                            animateOpacity
-                            scale={1.1}
-                            threshold={0.5}
-                        >
-                            Power Up Your Business with VSoft App Excellence!
-                        </AnimatedContent>
+                    <Typography
+                        variant="h4"
+                        component="h1"
+                        gutterBottom
+                        fontWeight="bold"
+                        ref={headingRef}
+                    >
+
+                        Power Up Your Business with VSoft App Excellence!
+
                     </Typography>
                     <Typography variant="body1" sx={{ mt: 3 }}>
                         <b>Smart applications. Seamless workflows. Scalable results.</b>
@@ -225,7 +233,7 @@ const ApplicationDevelopment = () => {
                         scale={1.1}
                         threshold={0.5}
                     >
-                    Technological Solutions We Offer
+                        Technological Solutions We Offer
                     </ScrollFloat>
                 </Typography>
 

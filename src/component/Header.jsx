@@ -83,10 +83,10 @@ function Header() {
           <nav ref={navRef} className="navigation">
             <ul className="nav-menu">
               <li className="nav-item">
-                <Link to="/home" className="nav-link" onClick={closeMenu}>Home</Link>
+                <Link to="/home" className="nav-link" onClick={closeMenu}><b>Home</b></Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link" onClick={closeMenu}>About us</Link>
+                <Link to="/about" className="nav-link" onClick={closeMenu}><b>About us</b></Link>
               </li>
               <li className="nav-item dropdown-parent">
                 <button 
@@ -94,7 +94,7 @@ function Header() {
                   onClick={() => toggleDropdown(0)}
                   aria-expanded={activeDropdown === 0}
                 >
-                  Our Services <span className="dropdown-arrow">▼</span>
+                 <b> Our Services <span className="dropdown-arrow">▼</span></b>
                 </button>
                 <ul className={`dropdown-menu ${activeDropdown === 0 ? "show" : ""}`}>
                   {serviceOptions[0].dropdown.map((item, index) => (
@@ -104,14 +104,17 @@ function Header() {
                         className="dropdown-link" 
                         onClick={handleDropdownLinkClick}
                       >
-                        {item.name}
+                       <b> {item.name} </b>
                       </Link>
                     </li>
                   ))}
                 </ul>
               </li>
               <li className="nav-item">
-                <Link to="/career" className="nav-link" onClick={closeMenu}>Career</Link>
+                <Link to="/career" className="nav-link" onClick={closeMenu}><b>Career</b></Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/culture" className="nav-link" onClick={closeMenu}><b>Our Culture</b></Link>
               </li>
               <li className="nav-item contact-btn-container">
                 <Link to="/contact" className="contact-btn" onClick={closeMenu}>Contact us</Link>

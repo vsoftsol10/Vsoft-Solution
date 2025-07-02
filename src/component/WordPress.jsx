@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { gsap } from 'gsap';
 import {
   Box,
   Container,
@@ -8,10 +9,6 @@ import {
   Link,
   Button,
   Grid,
-  Card,
-  CardContent,
-  CardActionArea,
-  CardMedia,
   Avatar,
   Paper,
   Stack,
@@ -31,7 +28,7 @@ import WordPressHero from '../assets/Wordpress.jpg';
 import HomeIcon from '@mui/icons-material/Home';
 import WebIcon from '@mui/icons-material/Language';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import BannerWP from '../assets/BannerWP.png';
+import BannerWP from '../assets/BannerWP.webp';
 import WordpressOne from '../assets/Wordpress1.jpg';
 import WordpressTwo from '../assets/Wordpress2.jpg';
 import ScrollFloat from '../Animations/ScrollFloat';
@@ -45,7 +42,21 @@ const WordPress = () => {
   const handleContactClick = () => {
     navigate('/contact'); // Make sure the /contact route exists
   };
-  
+  const headingRef = useRef();
+
+  useEffect(() => {
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: 'power2.out',
+      }
+    );
+  }, []);
+
   const services = [
     {
       title: "WordPress Installation & Configuration",
@@ -126,39 +137,36 @@ const WordPress = () => {
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" sx={{ color: '#fff' }} />}
             aria-label="breadcrumb"
-            sx={{ justifyContent: 'center', display: 'flex', mb: 2 }}
+            sx={{ justifyContent: 'center', display: 'flex', mb: 1 }}
           >
             <Link
               underline="hover"
               onClick={() => navigate('/')}
               sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer', color: '#fff' }}
             >
-              <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+              <HomeIcon sx={{ mr: 1 }} fontSize="inherit" />
               Home
             </Link>
             <Typography
               color="#fff"
               sx={{ display: 'flex', alignItems: 'center' }}
             >
-              <WebIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+              <WebIcon sx={{ mr: 1 }} fontSize="inherit" />
               WordPress Development
             </Typography>
           </Breadcrumbs>
 
           {/* Main Text */}
-          <Typography variant="h4" fontWeight="bold">
-            <AnimatedContent
-              distance={180}
-              direction="horizontal"
-              reverse={false}
-              config={{ tension: 100, friction: 80 }}
-              initialOpacity={0.1}
-              animateOpacity
-              scale={1.1}
-              threshold={0.5}
-            >
-              Smart Design. Seamless Experience. WordPress Done Right by VSoft.
-            </AnimatedContent>
+          <Typography
+            variant="h4"
+            component="h1"
+            gutterBottom
+            fontWeight="bold"
+            ref={headingRef}
+          >
+
+            Smart Design. Seamless Experience. WordPress Done Right by VSoft.
+
           </Typography>
           <Typography variant="body1" sx={{ mt: 3 }}>
             <b>We craft high-performance, SEO-friendly WordPress websites that look stunning and drive real business growth — all powered by VSoft Solutions.</b>
@@ -315,9 +323,9 @@ const WordPress = () => {
       <Box sx={{ py: 6, textAlign: 'center', maxWidth: '1200px', mx: 'auto', px: 3 }}>
         {/* Heading Section */}
         <Box sx={{ mb: 4 }}>
-          <Typography gutterBottom>
-            <ScrollFloat distance={180} direction="horizontal" reverse={true} config={{ tension: 100, friction: 80 }} initialOpacity={0.1} animateOpacity scale={1.1} threshold={0.5}>
-              Where Design Meets Performance – Powered by WordPress & VSoft
+          <Typography variant='h6' gutterBottom>
+            <ScrollFloat distance={180} direction="horizontal" reverse={true} config={{ tension: 100, friction: 50 }} initialOpacity={0.1} animateOpacity scale={0.5} threshold={0.5}>
+              Where Design Meets Performance–Powered by WordPress & VSoft
             </ScrollFloat>
           </Typography>
           <Typography variant="body1" sx={{ maxWidth: '900px', mx: 'auto', mb: 6 }}>
@@ -393,7 +401,7 @@ const WordPress = () => {
       {/* Client Approach Section */}
       <Box py={8} sx={{ backgroundColor: '#fffff' }}>
         <Container maxWidth="lg">
-          <Box 
+          <Box
             sx={{
               display: 'flex',
               flexDirection: 'column',
@@ -401,13 +409,13 @@ const WordPress = () => {
               textAlign: 'center'
             }}
           >
-            
-            
-            <Typography 
-              variant="h3" 
-              fontWeight="bold" 
+
+
+            <Typography
+              variant="h3"
+              fontWeight="bold"
               mb={3}
-              sx={{ 
+              sx={{
                 fontSize: { xs: '2rem', md: '3rem' },
                 background: 'linear-gradient(90deg, #2193b0, #6dd5ed)',
                 WebkitBackgroundClip: 'text',
@@ -416,11 +424,11 @@ const WordPress = () => {
             >
               50+ Clients Approached Us
             </Typography>
-            
-            <Typography 
-              variant="body1" 
-              mb={4} 
-              sx={{ 
+
+            <Typography
+              variant="body1"
+              mb={4}
+              sx={{
                 maxWidth: 700,
                 fontSize: { xs: '1rem', md: '1.1rem' },
                 color: '#555'
@@ -428,10 +436,10 @@ const WordPress = () => {
             >
               In under a year, our design agency has attracted over 50 clients across diverse industries, from startups to established brands. Our unique blend of creativity and strategic thinking has made us the go-to partner for companies looking to elevate their visual presence. Our collaborative approach ensures that each project not only meets but exceeds expectations, turning clients into long-term partners who return for all their design needs.
             </Typography>
-            
-            <Button 
+
+            <Button
               variant="contained"
-              sx={{ 
+              sx={{
                 bgcolor: '#5c245c',
                 borderRadius: 2,
                 px: 4,

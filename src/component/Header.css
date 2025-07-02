@@ -124,6 +124,12 @@
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
+  /* Remove sticky positioning for mobile */
+  .header {
+    position: static;
+    top: auto;
+  }
+  
   .hamburger-container {
     display: block;
   }

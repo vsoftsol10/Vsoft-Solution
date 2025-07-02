@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Box,
   Container,
@@ -6,21 +6,19 @@ import {
   Breadcrumbs,
   Link,
   Button,
-  Grid,
   Card,
   CardContent,
-  CardActionArea,
-  CardMedia,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
+import { gsap } from 'gsap';
 import AnimatedContent from '../Animations/AnimatedContent';
 import ScrollFloat from '../Animations/ScrollFloat';
 import HomeIcon from '@mui/icons-material/Home';
 import WebIcon from '@mui/icons-material/Language';
 import { useNavigate } from 'react-router-dom';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import DigiHero from '../assets/DigitalHero.jpg';
+import DigiHero from '../assets/DigitalHero.webp';
 import Branding from '../assets/DigiBrand.jpg';
 import SocialMedia from '../assets/SocialMedia.jpg';
 import FbInsta from '../assets/fbook & insta.jpg';
@@ -41,20 +39,26 @@ const DigitalMarketing = () => {
     navigate('/contact'); // Make sure the /contact route exists
   };
 
+  const headingRef = useRef();
+
+  useEffect(() => {
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 2.5,
+        ease: 'power2.out',
+      }
+    );
+  }, []);
+
   const services = [
     {
       id: 1,
       img: Branding,
-      title: <AnimatedContent
-        distance={180}
-        direction="horizontal"
-        reverse={false}
-        config={{ tension: 100, friction: 80 }}
-        initialOpacity={0.1}
-        animateOpacity
-        scale={1.1}
-        threshold={0.5}
-      >Branding that Builds Trust</AnimatedContent>,
+      title: 'Branding that Builds Trust',
       description: "A brand is more than just a logo — it's a story, a promise, a personality. We help shape your business identity so that your customers remember who you are and why you matter.",
       points: [
         "Brand Strategy & Positioning",
@@ -65,16 +69,7 @@ const DigitalMarketing = () => {
     {
       id: 2,
       img: SocialMedia,
-      title: <AnimatedContent
-        distance={180}
-        direction="horizontal"
-        reverse={true}
-        config={{ tension: 100, friction: 80 }}
-        initialOpacity={0.1}
-        animateOpacity
-        scale={1.1}
-        threshold={0.5}
-      >Social Media Management</AnimatedContent>,
+      title: 'Social Media Management',
       description: "We manage your digital presence across platforms like Instagram, Facebook, LinkedIn, and more — creating content calendars, engaging posts, and impactful campaigns that reflect your brand voice.",
       points: [
         "Daily/Weekly Content Posting",
@@ -86,16 +81,7 @@ const DigitalMarketing = () => {
     {
       id: 3,
       img: FbInsta,
-      title: <AnimatedContent
-        distance={180}
-        direction="horizontal"
-        reverse={false}
-        config={{ tension: 100, friction: 80 }}
-        initialOpacity={0.1}
-        animateOpacity
-        scale={1.1}
-        threshold={0.5}
-      >Facebook & Instagram Marketing</AnimatedContent>,
+      title: 'Facebook & Instagram Marketing',
       description: "Turn followers into customers! We create high-converting ad campaigns and creative visuals to capture attention and generate leads on Meta platforms.",
       points: [
         "Ad Design & Copywriting",
@@ -107,16 +93,7 @@ const DigitalMarketing = () => {
     {
       id: 4,
       img: GoogleAds,
-      title: <AnimatedContent
-        distance={180}
-        direction="horizontal"
-        reverse={true}
-        config={{ tension: 100, friction: 80 }}
-        initialOpacity={0.1}
-        animateOpacity
-        scale={1.1}
-        threshold={0.5}
-      >Google Ads (PPC)</AnimatedContent>,
+      title: 'Google Ads (PPC)',
       description: "Get seen when it matters most. Our Google-certified experts set up and manage PPC campaigns that bring in high-intent traffic — whether for your website, landing page, or product.",
       points: [
         "Search, Display & Video Ads",
@@ -128,16 +105,7 @@ const DigitalMarketing = () => {
     {
       id: 5,
       img: SEO,
-      title: <AnimatedContent
-        distance={180}
-        direction="horizontal"
-        reverse={false}
-        config={{ tension: 100, friction: 80 }}
-        initialOpacity={0.1}
-        animateOpacity
-        scale={1.1}
-        threshold={0.5}
-      >SEO & Local SEO</AnimatedContent>,
+      title: 'SEO & Local SEO',
       description: "Climb to the top of search engines with smart SEO strategies that drive organic traffic and local visibility. Perfect for businesses targeting a specific city or region.",
       points: [
         "On-Page & Off-Page SEO",
@@ -149,16 +117,7 @@ const DigitalMarketing = () => {
     {
       id: 6,
       img: ContentMarketing,
-      title: <AnimatedContent
-        distance={180}
-        direction="horizontal"
-        reverse={true}
-        config={{ tension: 100, friction: 80 }}
-        initialOpacity={0.1}
-        animateOpacity
-        scale={1.1}
-        threshold={0.5}
-      >Content Marketing</AnimatedContent>,
+      title: 'Content Marketing',
       description: "Good content doesn't just inform — it inspires action. From blogs and emails to product descriptions and social posts, we create content that delivers value and builds authority.",
       points: [
         "Blog Articles & Web Copy",
@@ -170,16 +129,7 @@ const DigitalMarketing = () => {
     {
       id: 7,
       img: CreativeDesign,
-      title: <AnimatedContent
-        distance={180}
-        direction="horizontal"
-        reverse={false}
-        config={{ tension: 100, friction: 80 }}
-        initialOpacity={0.1}
-        animateOpacity
-        scale={1.1}
-        threshold={0.5}
-      >Creative Designing</AnimatedContent>,
+      title: 'Creative Designing',
       description: "Make your brand visually unforgettable. We design everything you need to shine online — from static graphics to animated visuals.",
       points: [
         "Social Media Creatives",
@@ -190,16 +140,7 @@ const DigitalMarketing = () => {
     },
     {
       id: 8,
-      title: <AnimatedContent
-        distance={180}
-        direction="horizontal"
-        reverse={true}
-        config={{ tension: 100, friction: 80 }}
-        initialOpacity={0.1}
-        animateOpacity
-        scale={1.1}
-        threshold={0.5}
-      >Explainer Videos</AnimatedContent>,
+      title: 'Explainer Videos',
       img: Explainer,
       description: "Tell your story through high-impact, easy-to-understand videos. Our explainer videos simplify complex ideas, making them perfect for product demos, brand introductions, and landing pages.",
       points: [
@@ -211,33 +152,33 @@ const DigitalMarketing = () => {
     }
   ];
 
- const advantages = [
-  {
-    id: 1,
-    title: "Tailored Strategy for Every Business",
-    description: "We design unique marketing plans based on your goals, audience, and industry—no generic templates, just strategies that drive real business growth."
-  },
-  {
-    id: 2,
-    title: "Analytics-Backed Smart Decisions",
-    description: "Our strategies rely on real-time data and research. We track and adjust your campaigns continuously to maximize performance and ROI."
-  },
-  {
-    id: 3,
-    title: "Proven Success Across Industries",
-    description: "From startups to enterprises, our marketing efforts have consistently boosted visibility, traffic, leads, and conversions across multiple business domains."
-  },
-  {
-    id: 4,
-    title: "Creative and Performance Driven",
-    description: "We combine visually appealing designs with performance-focused strategies to ensure your brand stands out and delivers measurable business results."
-  },
-  {
-    id: 5,
-    title: "Quick Execution & Clear Updates",
-    description: "We ensure fast turnarounds and open communication. You’ll receive regular updates with full transparency on what’s done and why it matters."
-  }
-];
+  const advantages = [
+    {
+      id: 1,
+      title: "Tailored Strategy for Every Business",
+      description: "We design unique marketing plans based on your goals, audience, and industry—no generic templates, just strategies that drive real business growth."
+    },
+    {
+      id: 2,
+      title: "Analytics-Backed Smart Decisions",
+      description: "Our strategies rely on real-time data and research. We track and adjust your campaigns continuously to maximize performance and ROI."
+    },
+    {
+      id: 3,
+      title: "Proven Success Across Industries",
+      description: "From startups to enterprises, our marketing efforts have consistently boosted visibility, traffic, leads, and conversions across multiple business domains."
+    },
+    {
+      id: 4,
+      title: "Creative and Performance Driven",
+      description: "We combine visually appealing designs with performance-focused strategies to ensure your brand stands out and delivers measurable business results."
+    },
+    {
+      id: 5,
+      title: "Quick Execution & Clear Updates",
+      description: "We ensure fast turnarounds and open communication. You’ll receive regular updates with full transparency on what’s done and why it matters."
+    }
+  ];
 
 
   return (
@@ -292,19 +233,10 @@ const DigitalMarketing = () => {
           </Breadcrumbs>
 
           {/* Main Text */}
-          <Typography variant="h4" fontWeight="bold">
-            <AnimatedContent
-              distance={180}
-              direction="horizontal"
-              reverse={false}
-              config={{ tension: 100, friction: 80 }}
-              initialOpacity={0.1}
-              animateOpacity
-              scale={1.1}
-              threshold={0.5}
-            >
+          <Typography variant="h4" fontWeight="bold" ref={headingRef}>
+           
               Power Up Your Brand with <span style={{ color: vsoftGray }}>VS</span><span style={{ color: vsoftPurple }}>of</span><span style={{ color: vsoftGray }}>t</span> Digital Magic!
-            </AnimatedContent>
+           
           </Typography>
           <Typography variant="body1" sx={{ mt: 3 }}>
             <b>Crafted campaigns. Measurable results. Maximum reach.</b>
@@ -346,7 +278,7 @@ const DigitalMarketing = () => {
             scale={1.1}
             threshold={0.5}
           >
-          Our Digital Marketing Services Include</AnimatedContent>
+            Our Digital Marketing Services Include</AnimatedContent>
         </Typography>
       </Box>
       <Box maxWidth="xl" mx="auto" sx={{ mb: 8 }}>

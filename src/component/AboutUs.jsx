@@ -17,12 +17,12 @@ import HomeIcon from '@mui/icons-material/Home';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import WebIcon from '@mui/icons-material/Language';
 import { useNavigate } from 'react-router-dom';
-import AbtHead from '../assets/about-head.jpg';
+import AbtHead from '../assets/about-head.webp';
 import BuildIcon from '@mui/icons-material/Build';
 import GroupsIcon from '@mui/icons-material/Groups';
 import SupportIcon from '@mui/icons-material/Support';
-import Vision from '../assets/vision.png';
-import Mission from '../assets/mission.png';
+import Vision from '../assets/vision.webp';
+import Mission from '../assets/mission.webp';
 import ClientLogoSlider from '../Animations/ClientLogoSlider';
 
 const AboutUs = () => {
@@ -320,7 +320,7 @@ const AboutUs = () => {
                                         lineHeight: 1.6,
                                     }}
                                 >
-                                    At VSoft Solutions, we bring the <Box component="span" sx={{ color: vsoftPurple, fontWeight: 'bold' }}>firepower of creativity</Box> and the <Box component="span" sx={{ color: vsoftGray, fontWeight: 'bold' }}>focus of a results-driven team</Box>. We don't just deliver projects — we build <Box component="span" sx={{ color: vsoftPurple, fontWeight: 'bold' }}>bold digital experiences</Box> that help brands shine. With a blend of tech smarts and business insight, our <Box component="span" sx={{ color: vsoftGray, fontWeight: 'bold' }}>solutions work as hard as you do</Box>. Let's create something amazing together!
+                                    At VSoft Solutions, we bring the <Box component="span" sx={{ color: vsoftPurple, fontWeight: 'bold' }}>firepower of creativity</Box> and the <Box component="span" sx={{ color: vsoftGray, fontWeight: 'bold' }}>focus of a results-driven team</Box>. We don't just deliver projects we build <Box component="span" sx={{ color: vsoftPurple, fontWeight: 'bold' }}>bold digital experiences</Box> that help brands shine. With a blend of tech smarts and business insight, our <Box component="span" sx={{ color: vsoftGray, fontWeight: 'bold' }}>solutions work as hard as you do</Box>. Let's create something amazing together!
                                 </Typography>
                             </Box>
                         </Grid>
@@ -340,20 +340,20 @@ const AboutUs = () => {
                         align="center"
                         gutterBottom
                     >
-                         <ScrollFloat
-                                        animationDuration={1}
-                                        ease='back.inOut(2)'
-                                        scrollStart='center bottom+=50%'
-                                        scrollEnd='bottom bottom-=40%'
-                                        stagger={0.03}
-                                      >Why Choose Us
-                                      </ScrollFloat>
-                        
+                        <ScrollFloat
+                            animationDuration={1}
+                            ease='back.inOut(2)'
+                            scrollStart='center bottom+=50%'
+                            scrollEnd='bottom bottom-=40%'
+                            stagger={0.03}
+                        >Why Choose Us
+                        </ScrollFloat>
+
                     </Typography>
 
                     {/* Modified Grid to center cards */}
-                    <Box sx={{ 
-                        display: 'flex', 
+                    <Box sx={{
+                        display: 'flex',
                         flexDirection: { xs: 'column', md: 'row' },
                         justifyContent: 'center',
                         alignItems: 'center',

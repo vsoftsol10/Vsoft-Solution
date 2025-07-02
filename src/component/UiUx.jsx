@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { gsap } from 'gsap';
 import {
   Box,
   Container,
@@ -34,7 +35,7 @@ const UiUx = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  
+
   const vsoftPurple = '#803082';
   const vsoftGray = '#999999';
 
@@ -42,33 +43,47 @@ const UiUx = () => {
     navigate('/contact'); // Make sure the /contact route exists
   };
 
+  const headingRef = useRef();
+
+  useEffect(() => {
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: 'power3.out',
+      }
+    );
+  }, []);
   // Design tools we use
- const designTools = [
-  {
-    name: "Figma",
-    description: "Collaborative tool for wireframing, prototyping, and building design systems."
-  },
-  {
-    name: "Adobe XD",
-    description: "Design and prototype user interfaces with interactive and shareable specs."
-  },
-  {
-    name: "Sketch",
-    description: "Create pixel-perfect user interfaces and reusable design components with ease."
-  },
-  {
-    name: "Adobe Photoshop",
-    description: "Advanced tool for image editing, retouching, and custom visual creation."
-  },
-  {
-    name: "Adobe Illustrator",
-    description: "Create scalable vector graphics, logos, and detailed illustrations effortlessly."
-  },
-  {
-    name: "InVision",
-    description: "Build interactive mockups and gather real-time client feedback on designs."
-  }
-];
+  const designTools = [
+    {
+      name: "Figma",
+      description: "Collaborative tool for wireframing, prototyping, and building design systems."
+    },
+    {
+      name: "Adobe XD",
+      description: "Design and prototype user interfaces with interactive and shareable specs."
+    },
+    {
+      name: "Sketch",
+      description: "Create pixel-perfect user interfaces and reusable design components with ease."
+    },
+    {
+      name: "Adobe Photoshop",
+      description: "Advanced tool for image editing, retouching, and custom visual creation."
+    },
+    {
+      name: "Adobe Illustrator",
+      description: "Create scalable vector graphics, logos, and detailed illustrations effortlessly."
+    },
+    {
+      name: "InVision",
+      description: "Build interactive mockups and gather real-time client feedback on designs."
+    }
+  ];
 
   // Our design process steps
   const designProcess = [
@@ -156,19 +171,8 @@ const UiUx = () => {
           </Breadcrumbs>
 
           {/* Main Text */}
-          <Typography variant="h4" fontWeight="bold">
-            <AnimatedContent
-              distance={180}
-              direction="horizontal"
-              reverse={false}
-              config={{ tension: 100, friction: 80 }}
-              initialOpacity={0.1}
-              animateOpacity
-              scale={1.1}
-              threshold={0.5}
-            >
-              Smart Interfaces. Intuitive Journeys. UI/UX That Works by VSoft.
-            </AnimatedContent>
+          <Typography variant="h4" fontWeight="bold" ref={headingRef}>
+            Smart Interfaces. Intuitive Journeys. UI/UX That Works by VSoft.
           </Typography>
           <Typography variant="body1" sx={{ mt: 3 }}>
             <b>We design user-centric, visually stunning interfaces that deliver seamless experiences - turning clicks into customers and ideas into impact, all crafted with care by VSoft Solutions.</b>
@@ -252,7 +256,7 @@ const UiUx = () => {
             <ScrollFloat
               distance={180}
               direction="horizontal"
-              reverse={false} 
+              reverse={false}
               config={{ tension: 100, friction: 80 }}
               initialOpacity={0.1}
               animateOpacity
@@ -267,15 +271,15 @@ const UiUx = () => {
           <Grid container spacing={3} justifyContent="center">
             {designTools.map((tool, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card elevation={2} sx={{ 
-                  height: '100%', 
-                  borderRadius: 2, 
-                  transition: 'transform 0.3s', 
+                <Card elevation={2} sx={{
+                  height: '100%',
+                  borderRadius: 2,
+                  transition: 'transform 0.3s',
                   '&:hover': { transform: 'translateY(-8px)' },
                   display: 'flex',
                   flexDirection: 'column'
                 }}>
-                  <CardContent sx={{ 
+                  <CardContent sx={{
                     flexGrow: 1,
                     display: 'flex',
                     flexDirection: 'column',
@@ -319,7 +323,7 @@ const UiUx = () => {
             <Grid container spacing={4}>
               {designProcess.map((step, index) => (
                 <Grid item xs={12} key={index} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                  <Box sx={{ 
+                  <Box sx={{
                     mb: 2,
                     width: 80,
                     height: 80,
@@ -346,7 +350,7 @@ const UiUx = () => {
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               {designProcess.map((step, index) => (
                 <React.Fragment key={index}>
-                  <Box sx={{ 
+                  <Box sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -354,7 +358,7 @@ const UiUx = () => {
                     width: `${100 / designProcess.length}%`,
                     px: 2
                   }}>
-                    <Box sx={{ 
+                    <Box sx={{
                       mb: 2,
                       width: 80,
                       height: 80,
@@ -392,7 +396,7 @@ const UiUx = () => {
           <Typography variant="h4" fontWeight="bold" gutterBottom align="center" sx={{ mb: 5 }}>
             <ScrollFloat
               distance={180}
-              direction="horizontal"  
+              direction="horizontal"
               reverse={false}
               config={{ tension: 100, friction: 80 }}
               initialOpacity={0.1}
@@ -469,15 +473,21 @@ const UiUx = () => {
           sx={{
             borderColor: vsoftPurple,
             color: vsoftPurple,
-            '&:hover': { borderColor: vsoftPurple, backgroundColor: 'rgba(128, 48, 130, 0.04)' },
             borderRadius: '20px',
             px: 4,
             py: 1,
             fontWeight: 'bold',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              borderColor: vsoftPurple,
+              backgroundColor: vsoftPurple,
+              color: '#ffffff',
+            },
           }}
         >
           Get in Touch
         </Button>
+
       </Container>
     </>
   );

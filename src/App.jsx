@@ -1,8 +1,10 @@
 import './App.css';
+import ClickSpark from './Animations/ClickSpark';
 import Header from './component/Header';
 import Footer from './component/Footer';
 import Home from './component/Home';
 import WebDevlop from './component/WebDevlop';
+import OurCulture from './component/OurCulture';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { Routes, Route } from 'react-router-dom'; // Remove BrowserRouter here
 import AboutUs from './component/AboutUs';
@@ -10,9 +12,12 @@ import Contact from './component/Contact';
 import DigitalMarketing from './component/DigitalMarketing';
 import WordPress from './component/WordPress';
 import UiUx from './component/UiUx';
-import Career from './component/CareerPage';
+import CareersPage from './component/CareersPage';
+import JobSlide from './component/JobSlide';
 import ScrollToTop from './component/ScrollToTop';
 import ApplicationDevelopment from './component/ApplicationDevelopment';
+import FloatingIcons from './Animations/FloatingIcons';
+import Internship from './component/Internship';
 
 const theme = createTheme({
   palette: {
@@ -68,22 +73,33 @@ const theme = createTheme({
 function App() {
   return (
     <>
-      <Header />
-      <ScrollToTop />
+      <ClickSpark
+        sparkColor='#000'
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
+      >
+        <Header />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<AboutUs/>} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services/website-development" element={<WebDevlop />} />
           <Route path="/services/app-development" element={<ApplicationDevelopment />} />
           <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/services/wordpress-development" element={<WordPress />} />
-          <Route path='/services/ui-ux-design' element={<UiUx/>} ></Route>
-          <Route path='/career' element={<Career/>} ></Route> 
+          <Route path='/services/ui-ux-design' element={<UiUx />} ></Route>
+          <Route path='/career' element={<CareersPage />} ></Route>
+          <Route path="/culture" element={<OurCulture />} > </Route>
+          <Route path="/jobportal" element={< JobSlide/>}> </Route>
+          <Route path="/internship" element={< Internship/>}></Route>
         </Routes>
-      
-      <Footer />
+        <FloatingIcons />
+        <Footer />
+      </ClickSpark>
     </>
   );
 }

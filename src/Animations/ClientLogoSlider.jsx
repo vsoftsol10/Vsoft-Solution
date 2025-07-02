@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import AnimatedContent from '../Animations/AnimatedContent';
 import ClientOne from '../assets/client/BULLET CRACKERS LOGO 001.jpeg';
 import ClientTwo from '../assets/client/MKM LOGO 001.jpeg';
-import ClientThree from '../assets/client/SMEC LOGO 002.jpeg';
+import ClientThree from '../assets/client/SMEC LOGO 002.png';
 import ClientFour from '../assets/client/DARC LOGO.jpeg';
 import ClientFive from '../assets/client/CNI.jpeg';
 import ClientSix from '../assets/client/RAJALAKSHMI LOGO 001.jpeg';
@@ -75,7 +75,7 @@ const ClientLogoSlider = () => {
       });
     }
     return () => {
-      window.removeEventListener('resize', () => {});
+      window.removeEventListener('resize', () => { });
     };
   }, []);
 
@@ -111,7 +111,7 @@ const ClientLogoSlider = () => {
               borderRadius: '4px',
             }}
           />
-          
+
           {/* Subtitle */}
           <Typography
             variant="subtitle1"
@@ -136,7 +136,7 @@ const ClientLogoSlider = () => {
               Trusted Partnerships
             </AnimatedContent>
           </Typography>
-          
+
           {/* Main Header */}
           <Typography
             variant="h2"
@@ -162,7 +162,7 @@ const ClientLogoSlider = () => {
               Our Successful Clients
             </AnimatedContent>
           </Typography>
-          
+
           {/* Description */}
           <Typography
             variant="body1"
@@ -196,18 +196,22 @@ const ClientLogoSlider = () => {
               display: 'flex',
               alignItems: 'center',
             },
+            '& .slick-slide': {
+              padding: '0 2px', // adds gap between logos
+            }
           }}
         >
+
           <Slider ref={sliderRef} {...settings}>
             {clientLogos.map((client) => (
               <Box
                 key={client.id}
                 sx={{
-                  px: 2,
+                  px: { xs: 1, md: 3 },
                   display: 'flex !important',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  height: '100px',
+                  height: '150px',
                 }}
               >
                 <Box
@@ -237,8 +241,8 @@ const ClientLogoSlider = () => {
                     src={client.logo}
                     alt={client.name}
                     sx={{
-                      maxWidth: '200%',
-                      maxHeight: '200%',
+                      maxWidth: '100%',
+                      maxHeight: '100%',
                       objectFit: 'contain',
                     }}
                   />

@@ -155,11 +155,11 @@ export default function WebDevProcessStepper() {
       <Container maxWidth="lg">
         <Box textAlign="center" mb={{ xs: 4, sm: 6, md: 8 }}>
           <Typography
-            variant="h4"
+            variant="h6"
             sx={{
               fontWeight: 'bold',
               mb: 2,
-              fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3rem' }
+              fontSize: { xs: '1.15rem', sm: '2.15rem', md: '1rem' }
             }}
           >
             <ScrollFloat

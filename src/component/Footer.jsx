@@ -2,12 +2,36 @@ import React from 'react';
 import { Box, Container, Grid, Typography, Link, IconButton, Stack } from '@mui/material';
 import { Instagram, LinkedIn, YouTube, Phone, Language, Email } from '@mui/icons-material';
 import logo from '../assets/vslogo_new.png';
+import FooterBckImg from '../assets/footerbck.jpg';
 
 const Footer = () => {
     return (
-        <Box sx={{ backgroundColor: '#f5f3f6', color: '#000', py: 6 }}>
-            <Container maxWidth="xl">
-                <Grid container spacing={6}>
+        <Box
+            sx={{
+                position: 'relative',
+                py: 6,
+                color: '#000',
+                backgroundColor: '#f5f3f6',
+                overflow: 'hidden',
+            }}
+        >
+
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: `url(${FooterBckImg})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    opacity: 0.3,
+                    zIndex: 0,
+                }}
+            />
+            <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+                <Grid container spacing={{ xs: 4, sm: 6, md: 12, lg: 16 }}>
                     {/* Column 1 - Address */}
                     <Grid item xs={12} sm={6} md={3}>
                         <Box display="flex" flexDirection="column" gap={2}>
@@ -87,7 +111,7 @@ const Footer = () => {
                     </Grid>
 
                     {/* Map Section – move this here */}
-                    <Grid item xs={12}>
+                    {/* <Grid item xs={12}>
                         <Box mt={4} display="flex" justifyContent="center">
                             <iframe
                                 title="VSoft Solutions Location"
@@ -100,7 +124,7 @@ const Footer = () => {
                                 referrerPolicy="no-referrer-when-downgrade"
                             ></iframe>
                         </Box>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
 
                 {/* Footer Bottom Text */}
