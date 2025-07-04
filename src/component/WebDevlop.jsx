@@ -33,6 +33,7 @@ import HTML from '../assets/HTML.png';
 import CSS from '../assets/CSS.png';
 import JS from '../assets/javascript.png';
 import Reactjs from '../assets/React.png';
+import Angular from '../assets/angular.png';
 import Nodejs from '../assets/node-js.png';
 import MongoDB from '../assets/MongoDB.png';
 import Bootstrap from '../assets/Bootstrap.jpg';
@@ -103,6 +104,7 @@ const WebDevlop = () => {
     { name: 'JavaScript', logo: JS },
     { name: 'React Js', logo: Reactjs },
     { name: 'Next Js', logo: NextJs },
+    { name: 'Angular', logo: Angular },
     { name: 'Node Js', logo: Nodejs },
     { name: 'Mongo DB', logo: MongoDB },
     { name: 'Firebase', logo: FireBase },

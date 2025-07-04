@@ -1,7 +1,13 @@
-@import "tailwindcss";
+/* index.css */
 :root {
-  font-family: 'Poppins', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
-html {
-  scroll-behavior: smooth;
+
+h1, h2, h3, .heading {
+  font-family: var(--font-heading);
+}
+
+body, p, span, .text {
+  font-family: var(--font-body);
 }

@@ -2,8 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
+}
+/* index.css */
+:root {
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+h1, h2, h3, .heading {
+  font-family: var(--font-heading);
+}
+
+body, p, span, .text {
+  font-family: var(--font-body);
 }

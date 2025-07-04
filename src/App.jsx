@@ -1,4 +1,8 @@
 import './App.css';
+import '@fontsource/poppins/600.css'; // For headings
+import '@fontsource/poppins/700.css'; 
+import '@fontsource/inter/400.css';   // For body
+import '@fontsource/inter/500.css'; 
 import ClickSpark from './Animations/ClickSpark';
 import Header from './component/Header';
 import Footer from './component/Footer';

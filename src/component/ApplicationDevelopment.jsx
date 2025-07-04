@@ -30,7 +30,8 @@ import Nodejs from '../assets/node-js.png';
 import MongoDB from '../assets/MongoDB.png';
 import Bootstrap from '../assets/Bootstrap.jpg';
 import Mui from '../assets/MUI.png';
-
+import Flutter from '../assets/Flutter.png';
+import Kotlin from '../assets/kotlin.png';
 const ApplicationDevelopment = () => {
     const navigate = useNavigate(); // Initialize the navigate function
     const vsoftPurple = '#803082';
@@ -69,13 +70,15 @@ const ApplicationDevelopment = () => {
 
     const stacks = [
         { name: 'React Native', icon: ReactNative },
+        { name: 'Flutter', icon: Flutter },
+        { name: 'Kotlin', icon: Kotlin },
         { name: 'HTML', icon: HTML },
         { name: 'CSS', icon: CSS },
         { name: 'JavaScript', icon: JS },
         { name: 'Node.js', icon: Nodejs },
         { name: 'MongoDB', icon: MongoDB },
         { name: 'BootStrap', icon: Bootstrap },
-        { name: 'MUI', icon: Mui },
+        { name: 'MUI', icon: Mui },    
     ]
 
     return (
