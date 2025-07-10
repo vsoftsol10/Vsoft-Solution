@@ -16,6 +16,7 @@ import Contact from './component/Contact';
 import DigitalMarketing from './component/DigitalMarketing';
 import WordPress from './component/WordPress';
 import UiUx from './component/UiUx';
+import StepUp from './component/StepUp';
 import CareersPage from './component/CareersPage';
 import JobSlide from './component/JobSlide';
 import ScrollToTop from './component/ScrollToTop';
@@ -100,6 +101,7 @@ function App() {
           <Route path="/culture" element={<OurCulture />} > </Route>
           <Route path="/jobportal" element={< JobSlide/>}> </Route>
           <Route path="/internship" element={< Internship/>}></Route>
+          <Route path="/stepup" element={< StepUp/>}></Route>
         </Routes>
         <FloatingIcons />
         <Footer />

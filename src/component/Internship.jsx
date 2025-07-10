@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Award, Users, Clock, CheckCircle, MapPin, Phone, Globe, Star, Trophy, Briefcase, GraduationCap } from 'lucide-react';
+import { Breadcrumbs, Link, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
+import WebIcon from '@mui/icons-material/Language';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const Internship = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isAnimated, setIsAnimated] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [selectedCourseForForm, setSelectedCourseForForm] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsAnimated(true);
@@ -14,12 +20,12 @@ const Internship = () => {
   const courses = [
     {
       id: 1,
-      title: 'Cloud Computing',
+      title: 'Cloud Computing Basics',
       category: 'technology',
       platforms: ['AWS', 'Azure', 'Google Cloud Platform'],
       skills: ['EC2', 'S3', 'Lambda', 'Docker', 'Kubernetes'],
       duration: '3 months',
-      level: 'Beginner to Advanced',
+      level: 'Internship/ Course',
       description: 'Master cloud technologies with hands-on experience across AWS, Azure, and Google Cloud Platform.',
       features: ['Real-time projects', 'Industry mentorship', 'Certification preparation'],
       icon: '☁️',
@@ -28,17 +34,18 @@ const Internship = () => {
     },
     {
       id: 2,
-      title: 'SAP BASIS Administration',
+      title: 'SAP Basis Administration',
       category: 'enterprise',
       platforms: ['SAP HANA', 'SAP Cloud', 'BASIS'],
-      skills: ['SAP Understanding', 'BASIS Training', 'HANA DB Admin'],
-      duration: '4 months',
+      skills: ['SAP Understanding', 'BASIS Training', 'HANA DB Admin', 'System Administration', 'Technical Configuration'],
+      duration: '2 months',
       level: 'Intermediate',
       description: 'Complete SAP BASIS training with introduction to HANA database administration.',
       features: ['Enterprise tools', 'Real SAP environment', 'Job placement support'],
       icon: '⚡',
       gradient: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)',
-      formUrl: 'https://forms.gle/WidzQAmDBqaesEbs6'
+      formUrl: 'https://forms.gle/WidzQAmDBqaesEbs6',
+    
     },
     {
       id: 3,
@@ -47,7 +54,7 @@ const Internship = () => {
       platforms: ['Java', 'Firebase', 'React Native'],
       skills: ['Android', 'iOS', 'Cross-platform', 'Firebase'],
       duration: '3 months',
-      level: 'Beginner to Intermediate',
+      level: 'Internship/ Course',
       description: 'Build native and cross-platform mobile applications for both Android and iOS.',
       features: ['App store deployment', 'Live projects', 'Portfolio development'],
       icon: '📱',
@@ -60,8 +67,8 @@ const Internship = () => {
       category: 'development',
       platforms: ['HTML & CSS', 'JavaScript', 'React', 'Node.js'],
       skills: ['Frontend', 'Backend', 'Database', 'API Development'],
-      duration: '4 months',
-      level: 'Beginner to Advanced',
+      duration: '3 months',
+      level: 'Internship/ Course',
       description: 'Complete web development bootcamp covering frontend and backend technologies.',
       features: ['Full-stack projects', 'Modern frameworks', 'Industry best practices'],
       icon: '💻',
@@ -75,7 +82,7 @@ const Internship = () => {
       platforms: ['Google Ads', 'Social Media', 'WhatsApp Marketing'],
       skills: ['SEO', 'SEM', 'Social Media', 'Analytics'],
       duration: '2 months',
-      level: 'Beginner to Intermediate',
+      level: 'Internship/ Course',
       description: 'Master digital marketing strategies across multiple platforms and channels.',
       features: ['Campaign management', 'Analytics training', 'Certification prep'],
       icon: '📈',
@@ -88,8 +95,8 @@ const Internship = () => {
       category: 'design',
       platforms: ['Canva Premium', 'Figma'],
       skills: ['Design Principles', 'Brand Identity', 'UI/UX', 'Print Design'],
-      duration: '2 months',
-      level: 'Beginner to Intermediate',
+      duration: '1 months',
+      level: 'Internship/ Course',
       description: 'Create stunning designs for all industries using professional design tools.',
       features: ['Portfolio creation', 'Client projects', 'Design thinking'],
       icon: '🎨',
@@ -156,7 +163,7 @@ const Internship = () => {
       overflowX: 'hidden'
     },
     header: {
-      background: 'linear-gradient(135deg, #9333ea 0%, #2563eb 50%, #14b8a6 100%)',
+      background: 'linear-gradient(135deg, #1f2937 0%, #2563eb 50%, #14b8a6 100%)',
       color: 'white',
       padding: '32px 12px',
       position: 'relative',
@@ -237,18 +244,18 @@ const Internship = () => {
     sectionTitle: {
       fontSize: 'clamp(1.25rem, 4vw, 2rem)',
       fontWeight: 'bold',
-      color: '#7c3aed'
+      color: '#803082'
     },
     sectionTitleText: {
       fontSize: 'clamp(1.25rem, 4vw, 2rem)',
       fontWeight: 'bold',
-      color: '#7c3aed',
+      color: '#803082',
       margin: 0,
       wordBreak: 'break-word'
     },
     coursesGrid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
       gap: '20px',
       width: '100%',
       maxWidth: '1200px',
@@ -370,7 +377,7 @@ const Internship = () => {
     },
     whyChooseCenterGrid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
       gap: '20px',
       width: '100%',
       maxWidth: '1200px',
@@ -567,6 +574,7 @@ const Internship = () => {
       transform: 'scale(1.05)',
       boxShadow: '0 8px 20px rgba(147, 51, 234, 0.3)'
     },
+    
     // Form Modal Styles
     formModal: {
       position: 'fixed',
@@ -659,6 +667,27 @@ const Internship = () => {
       <div style={styles.header}>
         <div style={styles.headerOverlay}></div>
         <div style={styles.headerContent}>
+          <Breadcrumbs
+            separator={<NavigateNextIcon fontSize="small" sx={{ color: '#fff' }} />}
+            aria-label="breadcrumb"
+            sx={{ justifyContent: 'center', display: 'flex', mb: 1 }}
+          >
+            <Link
+              underline="hover"
+              onClick={() => navigate('/career')}
+              sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer', color: '#fff' }}
+            >
+              <HomeIcon sx={{ mr: 1 }} fontSize="inherit" />
+              Career
+            </Link>
+            <Typography
+              color="#fff"
+              sx={{ display: 'flex', alignItems: 'center' }}
+            >
+              <WebIcon sx={{ mr: 1 }} fontSize="inherit" />
+              Intership & Courses
+            </Typography>
+          </Breadcrumbs>
           <div style={styles.headerText}>
             <h1 style={styles.mainTitle}>
               OPEN INTERNSHIPS
@@ -714,7 +743,7 @@ const Internship = () => {
         <div style={styles.coursesSection}>
           <div style={styles.sectionHeader}>
             <div style={styles.sectionTitle}>
-              <h3 style={styles.sectionTitleText}>COURSES WE OFFER:</h3>
+              <h3 style={styles.sectionTitleText}>COURSES WE OFFER</h3>
             </div>
           </div>
 
@@ -824,16 +853,8 @@ const Internship = () => {
                     </h3>
                     <div style={styles.detailsGrid}>
                       <div style={styles.detailItem}>
-                        <span style={styles.detailLabel}>Duration:</span>
-                        <span style={styles.detailValue}>{selectedCourse.duration}</span>
-                      </div>
-                      <div style={styles.detailItem}>
                         <span style={styles.detailLabel}>Level:</span>
                         <span style={styles.detailValue}>{selectedCourse.level}</span>
-                      </div>
-                      <div style={styles.detailItem}>
-                        <span style={styles.detailLabel}>Category:</span>
-                        <span style={styles.detailValue}>{selectedCourse.category}</span>
                       </div>
                     </div>
 

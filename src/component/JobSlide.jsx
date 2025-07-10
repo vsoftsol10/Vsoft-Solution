@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import {  Breadcrumbs, Link, Typography} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import './JobSlide.css';
+import HomeIcon from '@mui/icons-material/Home';
+import WebIcon from '@mui/icons-material/Language';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const JobSlide = () => {
     const [activeCategory, setActiveCategory] = useState('all');
@@ -7,6 +12,7 @@ const JobSlide = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [locationTerm, setLocationTerm] = useState('');
     const [isAnimated, setIsAnimated] = useState(false);
+     const navigate = useNavigate();
 
     useEffect(() => {
         setIsAnimated(true);
@@ -111,6 +117,27 @@ const JobSlide = () => {
             {/* Hero Section */}
             <div className="hero-section">
                 <div className="hero-content">
+                    <Breadcrumbs
+                            separator={<NavigateNextIcon fontSize="small" sx={{ color: '#fff' }} />}
+                            aria-label="breadcrumb"
+                            sx={{ justifyContent: 'center', display: 'flex', mb: 1 }}
+                          >
+                            <Link
+                              underline="hover"
+                              onClick={() => navigate('/career')}
+                              sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer', color: '#fff' }}
+                            >
+                              <HomeIcon sx={{ mr: 1 }} fontSize="inherit" />
+                              Career
+                            </Link>
+                            <Typography
+                              color="#fff"
+                              sx={{ display: 'flex', alignItems: 'center' }}
+                            >
+                              <WebIcon sx={{ mr: 1 }} fontSize="inherit" />
+                              Job Portal
+                            </Typography>
+                          </Breadcrumbs>
                     <div className={isAnimated ? 'fade-in' : 'fade-out'}>
                         <h1 className="hero-title">
                             Find Your Dream

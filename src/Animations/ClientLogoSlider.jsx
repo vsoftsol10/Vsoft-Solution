@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Box, Container, Typography, useTheme, useMediaQuery } from '@mui/material';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -33,18 +33,17 @@ const ClientLogoSlider = () => {
     { id: 9, logo: ClientNine, name: "Nivedha" },
   ];
 
-  // Settings for the slider
+  // Settings for the normal slider
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
-    speed: 3000,
+    speed: 500,
     slidesToShow: isMobile ? 2 : (clientLogos.length > 5 ? 5 : clientLogos.length),
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
+    autoplaySpeed: 3000,
     pauseOnHover: true,
-    arrows: false,
+    arrows: true,
     responsive: [
       {
         breakpoint: 1200,
@@ -66,18 +65,6 @@ const ClientLogoSlider = () => {
       }
     ]
   };
-
-  // Effect to restart autoplay when component mounts or window is resized
-  useEffect(() => {
-    if (sliderRef.current) {
-      window.addEventListener('resize', () => {
-        sliderRef.current.slickPlay();
-      });
-    }
-    return () => {
-      window.removeEventListener('resize', () => { });
-    };
-  }, []);
 
   return (
     <Box
@@ -197,17 +184,39 @@ const ClientLogoSlider = () => {
               alignItems: 'center',
             },
             '& .slick-slide': {
-              padding: '0 2px', // adds gap between logos
-            }
+              padding: '0 10px', // adds gap between logos
+            },
+            '& .slick-dots': {
+              bottom: '-50px',
+              '& li button:before': {
+                color: vsoftPurple,
+                fontSize: '12px',
+              },
+              '& li.slick-active button:before': {
+                color: vsoftPurple,
+              },
+            },
+            '& .slick-arrow': {
+              zIndex: 1,
+              '&:before': {
+                color: vsoftPurple,
+                fontSize: '24px',
+              },
+            },
+            '& .slick-prev': {
+              left: '-40px',
+            },
+            '& .slick-next': {
+              right: '-40px',
+            },
           }}
         >
-
           <Slider ref={sliderRef} {...settings}>
             {clientLogos.map((client) => (
               <Box
                 key={client.id}
                 sx={{
-                  px: { xs: 1, md: 3 },
+                  px: { xs: 1, md: 2 },
                   display: 'flex !important',
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -226,11 +235,7 @@ const ClientLogoSlider = () => {
                     padding: '12px',
                     boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
                     transition: 'all 0.3s ease',
-                    filter: 'grayscale(100%)',
-                    opacity: 0.7,
                     '&:hover': {
-                      filter: 'grayscale(0%)',
-                      opacity: 1,
                       transform: 'translateY(-5px)',
                       boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
                     },

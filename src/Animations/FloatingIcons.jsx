@@ -21,19 +21,20 @@ const FloatingIcons = () => {
         <>
             {/* WhatsApp Icon */}
             <a
-  href="https://wa.me/919095422237"
-  className="floating-icon whatsapp-float"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <i className="fab fa-whatsapp"></i>
-</a>
+                href="https://wa.me/919095422237"
+                className="floating-icon whatsapp-float"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{textDecoration:"none"}}
+            >
+                <i className="fab fa-whatsapp"></i>
+            </a>
 
-{showButton && (
-  <button className="floating-icon back-to-top" onClick={scrollToTop}>
-    <i className="fas fa-caret-up"></i>
-  </button>
-)}
+            {showButton && (
+                <button className="floating-icon back-to-top" onClick={scrollToTop}>
+                    <i className="fas fa-caret-up"></i>
+                </button>
+            )}
 
         </>
     );

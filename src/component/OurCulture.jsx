@@ -12,12 +12,18 @@ import AnimatedContent from '../Animations/AnimatedContent';
 import HomeIcon from '@mui/icons-material/Home';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import WebIcon from '@mui/icons-material/Language';
-import WomensDay from '../assets/womensday.jpeg';
-import SAP from '../assets/sapprogram.jpeg';
-import FunFriday from '../assets/Funfriday.jpeg';
-import CloudInternship from '../assets/intershipcloud.jpeg';
+import WomensDay from '../assets/womensday.webp';
+import SAP from '../assets/sapprogram.webp';
+import FunFriday from '../assets/Funfriday.webp';
+import CloudInternship from '../assets/intershipcloud.webp';
 import DP from '../assets/mainlogo.png';
 import OfcTeam from '../assets/culture-heroImg.jpeg';
+import CultureOne from '../assets/culture1.webp';
+import CultureTwo from '../assets/culture2.webp';
+// import CultureThree from '../assets/culture3.webp';
+import CultureFour from '../assets/culture4.webp';
+import CultureFive from '../assets/culture5.webp';
+
 const OurCulture = () => {
   const [selectedPost, setSelectedPost] = useState(null);
   const [likedPosts, setLikedPosts] = useState(new Set());
@@ -68,11 +74,72 @@ const OurCulture = () => {
       author: "Vsoft",
       authorAvatar: DP,
       likes: 89,
-      comments: 31,
+      comments: 21,
       description: "Successfully completed our SAP training workshop! Empowring our team with cutting-edge knowledge and skills. A very good session to initiate a creative technologies into Vsoft solutions at Tirunlveli !",
       tags: ["SAP", "Workshop", "saptechnology", "Technology"],
       category: "festival"
-    }
+    },
+    {
+      id: 5,
+      title: "Intership Alerts",
+      image: CultureOne,
+      author: "Vsoft",
+      authorAvatar: DP,
+      likes: 109,
+      comments: 31,
+      description: "INTERSHIP ALERT at Vsoft Solutions! Ready to Move beyond the classroom",
+      tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+      category: "festival"
+    },
+    
+    // {
+    //   id: 6,
+    //   title: "SAP Training Workshop",
+    //   image: CultureThree,
+    //   author: "Vsoft",
+    //   authorAvatar: DP,
+    //   likes: 89,
+    //   comments: 31,
+    //   description: "Successfully completed our SAP training workshop! Empowring our team with cutting-edge knowledge and skills. A very good session to initiate a creative technologies into Vsoft solutions at Tirunlveli !",
+    //   tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+    //   category: "festival"
+    // },
+    {
+      id: 6,
+      title: "Digital Marketing Internship",
+      image: CultureTwo,
+      author: "Vsoft",
+      authorAvatar: DP,
+      likes: 189,
+      comments: 61,
+      description: "Intership Milestone Achieved! Proud to have successfully completed a 2 months Digital Marketing internship at Vsoft Solutions.",
+      tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+      category: "festival"
+    },
+    {
+      id: 7,
+      title: "Full Stack Internship",
+      image: CultureFour,
+      author: "Vsoft",
+      authorAvatar: DP,
+      likes: 149,
+      comments: 31,
+      description: "Full Stack Internship in Action at @vsoftsolutions!, From whiteboards to real-world applications - our talented interns are learning by doing.",
+      tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+      category: "festival"
+    },
+    {
+      id: 8 ,
+      title: "Wordpress Development Internship",
+      image: CultureFive,
+      author: "Vsoft",
+      authorAvatar: DP,
+      likes: 89,
+      comments: 68,
+      description: "Intership Achivements Unlocked! Excited to share that I've successfully completed a 15 days Wordpress Development internship at Vsoft Solutions !",
+      tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+      category: "festival"
+    },
   ];
 
   const handleLike = (postId) => {

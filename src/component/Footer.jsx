@@ -26,7 +26,7 @@ const Footer = () => {
                     backgroundImage: `url(${FooterBckImg})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    opacity: 0.3,
+                    opacity: 0.8,
                     zIndex: 0,
                 }}
             />
@@ -53,7 +53,7 @@ const Footer = () => {
                                 Quick Links
                             </Typography>
                             <Stack spacing={1}>
-                                <Link href="#" underline="hover" color="black">Career</Link>
+                                <Link href="/career" underline="hover" color="black">Career</Link>
                                 <Link href="#" underline="hover" color="black">Privacy Policy</Link>
                                 <Link href="#" underline="hover" color="black">Terms & Conditions</Link>
                             </Stack>
@@ -94,18 +94,35 @@ const Footer = () => {
                                 Social Medias
                             </Typography>
                             <Stack spacing={1} color="black">
-                                <Stack direction="row" alignItems="center" spacing={1}>
-                                    <Instagram fontSize="small" />
-                                    <Typography variant="body2">Instagram</Typography>
+                                <Stack spacing={1} color="black">
+                                    <a
+                                        href="https://www.instagram.com/thevsoft?igsh=MXdiMTlmNnE2MWx1Zw=="
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ textDecoration: 'none', color: 'inherit' }}
+                                    >
+                                        <Stack direction="row" alignItems="center" spacing={1}>
+                                            <Instagram fontSize="small" />
+                                            <Typography variant="body2">Instagram</Typography>
+                                        </Stack>
+                                    </a>
                                 </Stack>
                                 <Stack direction="row" alignItems="center" spacing={1}>
                                     <YouTube fontSize="small" />
                                     <Typography variant="body2">YouTube</Typography>
                                 </Stack>
-                                <Stack direction="row" alignItems="center" spacing={1}>
-                                    <LinkedIn fontSize="small" />
-                                    <Typography variant="body2">LinkedIn</Typography>
-                                </Stack>
+                                <a
+                                    href="https://www.linkedin.com/company/thevsoft-solutions/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ textDecoration: 'none', color: 'inherit' }}
+                                >
+                                    <Stack direction="row" alignItems="center" spacing={1}>
+                                        <LinkedIn fontSize="small" />
+                                        <Typography variant="body2">LinkedIn</Typography>
+                                    </Stack>
+                                </a>
+
                             </Stack>
                         </Box>
                     </Grid>
