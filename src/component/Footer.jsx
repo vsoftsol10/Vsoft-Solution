@@ -38,7 +38,7 @@ const Footer = () => {
                             <Box>
                                 <img src={logo} alt="logo" style={{ height: '100px' }} />
                             </Box>
-                            <Box>
+                            <Box color={"#fff"}>
                                 <Typography variant="body2">10J2, 2nd block, Tiruvandrum Road</Typography>
                                 <Typography variant="body2">Vannarapettai, Tirunelveli.</Typography>
                                 <Typography variant="body2">Tamilnadu - 627002, India.</Typography>
@@ -53,9 +53,9 @@ const Footer = () => {
                                 Quick Links
                             </Typography>
                             <Stack spacing={1}>
-                                <Link href="/career" underline="hover" color="black">Career</Link>
-                                <Link href="#" underline="hover" color="black">Privacy Policy</Link>
-                                <Link href="#" underline="hover" color="black">Terms & Conditions</Link>
+                                <Link href="/career" underline="hover" color="white">Career</Link>
+                                <Link href="#" underline="hover" color="white">Privacy Policy</Link>
+                                <Link href="#" underline="hover" color="white">Terms & Conditions</Link>
                             </Stack>
                         </Box>
                     </Grid>
@@ -66,20 +66,20 @@ const Footer = () => {
                             <Typography variant="h6" color="#7a337a" fontWeight="bold">
                                 Contact Us
                             </Typography>
-                            <Stack spacing={1} color="black">
+                            <Stack spacing={1} color="white">
                                 <Stack direction="row" alignItems="center" spacing={1}>
                                     <Phone fontSize="small" />
-                                    <Typography variant="body2">+91 90954 22237</Typography>
+                                    <Typography variant="body2"><b>+91 90954 22237</b></Typography>
                                 </Stack>
                                 <Stack direction="row" alignItems="center" spacing={1}>
                                     <Language fontSize="small" />
-                                    <Link href="https://www.thevsoft.com" underline="hover" color="black">
+                                    <Link href="https://www.thevsoft.com" underline="hover" color="white">
                                         www.thevsoft.com
                                     </Link>
                                 </Stack>
                                 <Stack direction="row" alignItems="center" spacing={1}>
                                     <Email fontSize="small" />
-                                    <Link href="mailto:info@thevsoft.com" underline="hover" color="black">
+                                    <Link href="mailto:info@thevsoft.com" underline="hover" color="white">
                                         info@thevsoft.com
                                     </Link>
                                 </Stack>
@@ -93,23 +93,23 @@ const Footer = () => {
                             <Typography variant="h6" color="#7a337a" fontWeight="bold">
                                 Social Medias
                             </Typography>
-                            <Stack spacing={1} color="black">
-                                <Stack spacing={1} color="black">
+                            <Stack spacing={1} color="white">
+                                <Stack spacing={1} color="white">
                                     <a
                                         href="https://www.instagram.com/thevsoft?igsh=MXdiMTlmNnE2MWx1Zw=="
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         style={{ textDecoration: 'none', color: 'inherit' }}
                                     >
-                                        <Stack direction="row" alignItems="center" spacing={1}>
+                                        <Stack direction="row" alignItems="center" spacing={1} >
                                             <Instagram fontSize="small" />
-                                            <Typography variant="body2">Instagram</Typography>
+                                            <Typography variant="body2" sx={{fontSize:"15px"}}><b>Instagram</b></Typography>
                                         </Stack>
                                     </a>
                                 </Stack>
                                 <Stack direction="row" alignItems="center" spacing={1}>
                                     <YouTube fontSize="small" />
-                                    <Typography variant="body2">YouTube</Typography>
+                                    <Typography variant="body2" sx={{fontSize:"15px"}}><b>YouTube</b></Typography>
                                 </Stack>
                                 <a
                                     href="https://www.linkedin.com/company/thevsoft-solutions/"
@@ -119,7 +119,7 @@ const Footer = () => {
                                 >
                                     <Stack direction="row" alignItems="center" spacing={1}>
                                         <LinkedIn fontSize="small" />
-                                        <Typography variant="body2">LinkedIn</Typography>
+                                        <Typography variant="body2" sx={{fontSize:"15px"}}><b>LinkedIn</b></Typography>
                                     </Stack>
                                 </a>
 
