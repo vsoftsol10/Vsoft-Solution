@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  Stepper,
-  Step,
-  StepLabel,
   Box,
+  Container,
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
   useMediaQuery,
   StepConnector,
   Typography,
@@ -13,13 +15,7 @@ import { useNavigate } from "react-router-dom";
 import './StepUp.css';
 import StepUpLogo from '../assets/StepUp-final.png';
 import StepHero from '../assets/stephero2.webp';
-
-
-const steps = [
-  '21 Days Internship',
-  '2 Months Technical + Practical Training',
-  'SAP Basis Admin + Placement Assistance',
-];
+import SapImg from '../assets/sapprogram.webp';
 
 
 const StepUp = () => {
@@ -32,8 +28,6 @@ const StepUp = () => {
       borderWidth: 2,
     },
   }));
-
-
 
   return (
     <div className="stepup-container">
@@ -78,89 +72,137 @@ const StepUp = () => {
 
       {/* Main Content */}
       <div className="main-content">
-        {/* SAP Course Section */}
-        <section className="course-details">
-          <h2 className="section-title">SAP Course Details</h2>
-          <h3 className="section-subtitle">Professional SAP Basis Administration Training</h3>
-
-          <div className="tailor-made-section">
-            <h4 className="tailor-title">🎯 Tailor Made For Each Student</h4>
-
-            <div className="eligibility-card">
-              <h5>Eligibility:</h5>
-              <div className="chips-container">
-                <span className="chip">CSE</span>
-                <span className="chip">IT</span>
-                <span className="chip">ECE</span>
-                <span className="chip">B.Sc Science</span>
-                <span className="chip">B.Sc Arts</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="course-options">
-            <div className="course-card internship-card">
-              <div className="card-header">
-                <div className="icon time-icon">⏰</div>
-                <h3>Internship Program</h3>
-              </div>
-              <ul className="feature-list">
-                <li>✓ Duration: 1 Months</li>
-                <li>✓ Fee: ₹3,500</li>
-                <li>✓ SAP Basics & Fundamentals</li>
-              </ul>
-              <div className="special-offer">
-                💡 Complete internship & get training discount!
-              </div>
-            </div>
-
-            <div className="course-card training-card">
-              <div className="card-header">
-                <div className="icon verified-icon">✅</div>
-                <h3>Complete Training</h3>
-              </div>
-              <ul className="feature-list">
-                <li>⭐ Duration: 75 Days</li>
-                <li>⭐ Placement Assistance</li>
-                <li>⭐ Theory + Practical</li>
-                <li>⭐ SAP Certification</li>
-              </ul>
-              <div className="cta-button-container">
-                <button
-                  className="cta-button"
-                  onClick={() => window.open('https://forms.gle/4KeQeS3DZs92KTZSA', '_blank')}>
-                  Join Course Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <Box sx={{ width: '100%', px: 2, py: 4 }}>
-          <Typography variant="h5" fontWeight="bold" textAlign="center" mb={4}>
-            Step Up Your Career
-          </Typography>
-
-          <Stepper
-            alternativeLabel={!isMobile}
-            orientation={isMobile ? 'vertical' : 'horizontal'}
-            connector={<ColorConnector />}
+        <Container maxWidth="lg" sx={{ py: 4 }}>
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              minHeight: { md: 400 },
+              boxShadow: 3,
+              borderRadius: 2,
+              overflow: 'hidden'
+            }}
           >
-            {steps.map((label, index) => (
-              <Step key={index} active completed>
-                <StepLabel>
-                  <Typography
-                    variant={isMobile ? 'body1' : 'subtitle1'}
-                    fontWeight="500"
-                    textAlign={isMobile ? 'left' : 'center'}
-                  >
-                    {label}
-                  </Typography>
-                </StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-        </Box>
+            {/* Left side - Image */}
+            <CardMedia
+              component="img"
+              sx={{
+                width: { xs: '100%', md: '50%' },
+                height: { xs: 250, md: 'auto' },
+                objectFit: 'cover'
+              }}
+              image={SapImg}
+              alt="sap"
+            />
+
+            {/* Right side - Content */}
+            <CardContent
+              sx={{
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                p: { xs: 2, sm: 3, md: 4 },
+                backgroundColor: '#f8f9fa',
+                textAlign: { xs: 'center', md: 'left' },
+              }}
+            >
+              <Typography
+                variant="h5"
+                component="h2"
+                gutterBottom
+                sx={{
+                  fontWeight: 'bold',
+                  color: '#2c3e50',
+                  mb: { xs: 2, sm: 3 },
+                  fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+                }}
+              >
+                SAP Internship/Training Program
+              </Typography>
+
+              <Typography
+                fontWeight="bold"
+                color="primary"
+                gutterBottom
+                sx={{
+                  fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' },
+                  mb: { xs: 2, sm: 3 }
+                }}
+              >
+                🚀 StepUp - 75 Days Internship & Training Program
+              </Typography>
+
+              <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
+                <strong>StepUp by VSoft Solutions</strong> is offering a <strong>75-day (3-month)</strong> internship and training
+                program specially crafted for:
+              </Typography>
+
+              <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
+                🎓 <strong>Students</strong> who want to build their IT career<br />
+                👩‍💼 <strong>Women</strong> looking to restart their professional journey after a break
+              </Typography>
+
+              <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
+                This program includes:
+              </Typography>
+
+              <Box component="ul" sx={{ pl: { xs: 2, sm: 3 }, mb: 2 }}>
+                {[
+                  'Real-time technical & practical training',
+                  'Hands-on project experience',
+                  'Certification upon successful completion',
+                  'Placement assistance and soft skill development',
+                ].map((item, idx) => (
+                  <li key={idx}>
+                    <Typography variant="body1" sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
+                      ✅ {item}
+                    </Typography>
+                  </li>
+                ))}
+              </Box>
+
+              <Typography
+                variant="h6"
+                color="secondary"
+                sx={{
+                  mt: { xs: 3, sm: 4 },
+                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' }
+                }}
+              >
+                🔔 Why wait? Let StepUp guide your growth journey.
+              </Typography>
+
+              <Box
+                sx={{
+                  mt: { xs: 3, sm: 4 },
+                  display: 'flex',
+                  justifyContent: { xs: 'center', md: 'flex-start' }
+                }}
+              >
+                <Button
+                  variant="contained"
+                  size="large"
+                  onClick={() => navigate('/stepupsap')}
+                  sx={{
+                    backgroundColor: 'purple',
+                    '&:hover': {
+                      backgroundColor: 'indigo'
+                    },
+                    px: 4,
+                    py: 1.5,
+                    borderRadius: 1,
+                    textTransform: 'none',
+                    fontWeight: 'bold',
+                    fontSize: { xs: '0.9rem', sm: '1rem' }
+                  }}
+                >
+                  Know More →
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+        </Container>
         {/* Stay Connected */}
         <section className="stay-connected">
           <h2 className="text-3xl font-bold text-center mb-4 text-purple-700">

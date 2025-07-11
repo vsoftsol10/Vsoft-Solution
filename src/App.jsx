@@ -23,6 +23,7 @@ import ScrollToTop from './component/ScrollToTop';
 import ApplicationDevelopment from './component/ApplicationDevelopment';
 import FloatingIcons from './Animations/FloatingIcons';
 import Internship from './component/Internship';
+import StepUpSAP from './component/StepUpSAP';
 
 const theme = createTheme({
   palette: {
@@ -102,6 +103,7 @@ function App() {
           <Route path="/jobportal" element={< JobSlide/>}> </Route>
           <Route path="/internship" element={< Internship/>}></Route>
           <Route path="/stepup" element={< StepUp/>}></Route>
+          <Route path="/stepupsap" element={< StepUpSAP/>}></Route>
         </Routes>
         <FloatingIcons />
         <Footer />
