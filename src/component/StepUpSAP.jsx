@@ -24,7 +24,7 @@ const StepUpSAP = () => {
     const navigate = useNavigate();
     const ColorConnector = styled(StepConnector)(({ theme }) => ({
         '& .MuiStepConnector-line': {
-            borderColor: theme.palette.primary.main,
+            borderColor: theme.palette.primary.main,     
             borderWidth: 2,
         },
     }));

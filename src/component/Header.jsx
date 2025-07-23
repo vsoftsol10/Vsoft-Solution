@@ -95,6 +95,11 @@ function Header() {
                     <b>About us</b>
                   </a>
                 </li>
+                <li className="nav-item">
+                  <a href="/product" className="nav-link" onClick={closeMenu}>
+                    <b>Products</b>
+                  </a>
+                </li>
                 <li className="nav-item dropdown-parent">
                   <button
                     className="nav-link dropdown-toggle"

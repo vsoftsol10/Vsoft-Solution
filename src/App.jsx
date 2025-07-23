@@ -24,6 +24,7 @@ import ApplicationDevelopment from './component/ApplicationDevelopment';
 import FloatingIcons from './Animations/FloatingIcons';
 import Internship from './component/Internship';
 import StepUpSAP from './component/StepUpSAP';
+import Product from './component/Product';
 
 const theme = createTheme({
   palette: {
@@ -104,6 +105,7 @@ function App() {
           <Route path="/internship" element={< Internship/>}></Route>
           <Route path="/stepup" element={< StepUp/>}></Route>
           <Route path="/stepupsap" element={< StepUpSAP/>}></Route>
+          <Route path="/product" element={<Product />} />
         </Routes>
         <FloatingIcons />
         <Footer />
