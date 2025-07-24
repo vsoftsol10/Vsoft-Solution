@@ -25,6 +25,7 @@ import FloatingIcons from './Animations/FloatingIcons';
 import Internship from './component/Internship';
 import StepUpSAP from './component/StepUpSAP';
 import Product from './component/Product';
+import PageTitleUpdater from './component/PageTitleUpdater';
 
 const theme = createTheme({
   palette: {
@@ -89,6 +90,7 @@ function App() {
       >
         <Header />
         <ScrollToTop />
+        <PageTitleUpdater />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
