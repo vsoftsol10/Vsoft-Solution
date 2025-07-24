@@ -4,7 +4,6 @@
 .job-slide {
   min-height: 100vh;
   background-color: #f9fafb;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color: #1f2937;
 }
 
@@ -12,8 +11,23 @@
 .hero-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  height: 80vh;
+
+  background: linear-gradient(
+                rgba(6, 7, 105, 0.6), 
+                rgba(79, 38, 117, 0.6)
+              ),
+              url('../assets/careers.webp');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .hero-content {
@@ -29,7 +43,7 @@
 
 .hero-title-gradient {
   margin-bottom: 1.5rem;
-  background: #999999;
+  background: #fff;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
