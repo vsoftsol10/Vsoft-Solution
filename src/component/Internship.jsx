@@ -28,7 +28,7 @@ const Internship = () => {
       level: 'Internship/ Course',
       description: 'Master cloud technologies with hands-on experience across AWS, Azure, and Google Cloud Platform.',
       features: ['Real-time projects', 'Industry mentorship', 'Certification preparation'],
-      icon: '☁️',
+      // icon: '☁️',
       gradient: 'linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)',
       formUrl: 'https://forms.gle/WidzQAmDBqaesEbs6'
     },
@@ -42,7 +42,7 @@ const Internship = () => {
       level: 'Intermediate',
       description: 'Complete SAP BASIS training with introduction to HANA database administration.',
       features: ['Enterprise tools', 'Real SAP environment', 'Job placement support'],
-      icon: '⚡',
+      // icon: '⚡',
       gradient: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)',
       formUrl: 'https://forms.gle/WidzQAmDBqaesEbs6',
     
@@ -57,7 +57,7 @@ const Internship = () => {
       level: 'Internship/ Course',
       description: 'Build native and cross-platform mobile applications for both Android and iOS.',
       features: ['App store deployment', 'Live projects', 'Portfolio development'],
-      icon: '📱',
+      // icon: '📱',
       gradient: 'linear-gradient(135deg, #10b981 0%, #14b8a6 100%)',
       formUrl: 'https://forms.gle/WidzQAmDBqaesEbs6'
     },
@@ -71,7 +71,7 @@ const Internship = () => {
       level: 'Internship/ Course',
       description: 'Complete web development bootcamp covering frontend and backend technologies.',
       features: ['Full-stack projects', 'Modern frameworks', 'Industry best practices'],
-      icon: '💻',
+      // icon: '💻',
       gradient: 'linear-gradient(135deg, #f97316 0%, #ef4444 100%)',
       formUrl: 'https://forms.gle/WidzQAmDBqaesEbs6'
     },
@@ -85,7 +85,7 @@ const Internship = () => {
       level: 'Internship/ Course',
       description: 'Master digital marketing strategies across multiple platforms and channels.',
       features: ['Campaign management', 'Analytics training', 'Certification prep'],
-      icon: '📈',
+      // icon: '📈',
       gradient: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
       formUrl: 'https://forms.gle/WidzQAmDBqaesEbs6'
     },
@@ -99,7 +99,7 @@ const Internship = () => {
       level: 'Internship/ Course',
       description: 'Create stunning designs for all industries using professional design tools.',
       features: ['Portfolio creation', 'Client projects', 'Design thinking'],
-      icon: '🎨',
+      // icon: '🎨',
       gradient: 'linear-gradient(135deg, #ec4899 0%, #f43f5e 100%)',
       formUrl: 'https://forms.gle/WidzQAmDBqaesEbs6'
     }
@@ -766,7 +766,7 @@ const Internship = () => {
               >
                 <div style={{ ...styles.courseHeader, background: course.gradient }}>
                   <div style={styles.courseHeaderTop}>
-                    <div style={styles.courseIcon}>{course.icon}</div>
+                    {/* <div style={styles.courseIcon}>{course.icon}</div> */}
                     <div style={styles.courseDuration}>
                       <div style={styles.durationLabel}>Duration</div>
                       <div style={styles.durationValue}>{course.duration}</div>

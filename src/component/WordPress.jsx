@@ -323,10 +323,8 @@ const WordPress = () => {
       <Box sx={{ py: 6, textAlign: 'center', maxWidth: '1200px', mx: 'auto', px: 3 }}>
         {/* Heading Section */}
         <Box sx={{ mb: 4 }}>
-          <Typography variant='h6' gutterBottom>
-            <ScrollFloat distance={180} direction="horizontal" reverse={true} config={{ tension: 100, friction: 50 }} initialOpacity={0.1} animateOpacity scale={0.5} threshold={0.5}>
-              Where Design Meets Performance–Powered by WordPress & VSoft
-            </ScrollFloat>
+          <Typography variant='h3' ref={headingRef} gutterBottom>
+            Where Design Meets Performance Powered by WordPress & VSoft
           </Typography>
           <Typography variant="body1" sx={{ maxWidth: '900px', mx: 'auto', mb: 6 }}>
             With a passion for digital innovation, VSoft Solutions builds custom WordPress solutions that help businesses scale effortlessly and succeed online.

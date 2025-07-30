@@ -135,18 +135,18 @@ const HomePage = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const headingRef = useRef();
 
-  useEffect(() => {
-    gsap.fromTo(
-      headingRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 4.5,
-        ease: 'power3.out',
-      }
-    );
-  }, []);
+ useEffect(() => {
+  gsap.fromTo(
+    headingRef.current,
+    { opacity: 0, y: -60 }, // 👈 Start above
+    {
+      opacity: 1,
+      y: 0,                 // 👈 End at original position
+      duration: 1.5,
+      ease: 'power3.out',
+    }
+  );
+}, []);
 
   const services = [
     {
@@ -157,19 +157,19 @@ const HomePage = () => {
     },
     {
       title: 'MOBILE APP DEVELOPMENT',
-      icon: ServiceThree,
+      icon: ServiceTwo,
       description: 'Mobile app development is the process of creating mobile applications for iOS and Android platforms, ensuring excellent performance and user-friendly interfaces.',
       link: '/services/app-development'
     },
     {
       title: 'UI/UX DESIGN',
-      icon: ServiceOne,
+      icon: ServiceThree,
       description: 'UX/UI web design focuses on creating intuitive, attractive, and highly user-friendly websites that enhance your experience and engagement.',
       link: '/services/ui-ux-design'
     },
     {
       title: 'DIGITAL MARKETING',
-      icon: ServiceTwo,
+      icon: ServiceOne,
       description: 'Digital marketing combines social media marketing, SEO, paid ads to drive engagement and business growth.',
       link: '/services/digital-marketing'
     }
@@ -285,7 +285,7 @@ const HomePage = () => {
                 <Typography variant="subtitle1" gutterBottom>
                   We are creative
                 </Typography>
-                <Typography variant="h3" component="h1" gutterBottom
+                <Typography variant="h3" gutterBottom
                   fontWeight="bold"
                   ref={headingRef}>
 
@@ -293,7 +293,7 @@ const HomePage = () => {
 
                 </Typography>
                 <Typography variant="body1" paragraph>
-                  Transform your vision into reality with our expert software solutions !
+                  Transform your vision into reality with our expert software solutions!
                 </Typography>
                 <Box mt={3}>
                   <GetTouchButton
@@ -345,24 +345,14 @@ const HomePage = () => {
                 component="h2"
                 gutterBottom
                 fontWeight="bold"
+                ref={headingRef}
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
                   mb: 4
                 }}
               >
-                <AnimatedContent
-                  distance={180}
-                  direction="horizontal"
-                  reverse={true}
-                  config={{ tension: 100, friction: 80 }}
-                  initialOpacity={0.1}
-                  animateOpacity
-                  scale={1.1}
-                  threshold={0.5}
-                >
                   About Us <ArrowForwardIcon sx={{ ml: 1, color: '#7a337a' }} />
-                </AnimatedContent>
               </Typography>
               <Box
                 component="img"
@@ -371,22 +361,15 @@ const HomePage = () => {
                 sx={{
                   width: '85%',
                   height: 'auto',
-                  borderRadius: '8px',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 }}
               />
             </Box>
 
             {/* Content on the right */}
             <Box sx={{ flex: 1 }}>
-              <Typography variant="h4" component="h3" gutterBottom fontWeight="bold">
-                <ScrollReveal baseOpacity={10}
-                  enableBlur={true}
-                  baseRotation={0}
-                  blurStrength={8}
-                >
+              <Typography variant="h4" component="h3" ref={headingRef} gutterBottom fontWeight="bold">
+               
                   VSoft Solutions, your trusted partner in technology and digital innovation.
-                </ScrollReveal>
               </Typography>
               <Typography variant="body1" paragraph>
                 We are a dynamic software development company committed to creating smart, scalable, and efficient digital solutions for businesses of all sizes. We specialize in software development, digital marketing, and UI/UX design, helping businesses establish a strong digital presence and achieve their goals.
@@ -423,16 +406,8 @@ const HomePage = () => {
         <Container maxWidth="lg">
           {/* Section Header */}
           <Box textAlign="center" mb={6}>
-            <Typography variant="h3" fontWeight="bold" gutterBottom>
-              <ScrollFloat
-                animationDuration={1}
-                ease='back.inOut(2)'
-                scrollStart='center bottom+=50%'
-                scrollEnd='bottom bottom-=40%'
-                stagger={0.03}
-              >
+            <Typography variant="h3" fontWeight="bold" ref={headingRef} gutterBottom>
                 Checkout Our Service Here
-              </ScrollFloat>
             </Typography>
             <Typography variant="h5" mb={2}>
               <b>Innovative Software development & Digital Marketing</b>
@@ -504,16 +479,8 @@ const HomePage = () => {
       <Box sx={{ py: 8, backgroundColor: '#fff' }}>
         <Container maxWidth="lg">
           <Box textAlign="center" mb={4}>
-            <Typography variant="h4" fontWeight="bold" gutterBottom>
-              <ScrollFloat
-                animationDuration={1}
-                ease='back.inOut(2)'
-                scrollStart='center bottom+=50%'
-                scrollEnd='bottom bottom-=40%'
-                stagger={0.03}
-              >
+            <Typography variant="h3" fontWeight="bold" ref={headingRef} gutterBottom>
                 What We Do !
-              </ScrollFloat>
             </Typography>
             <Box />
             <Typography variant="body1">
@@ -563,16 +530,8 @@ const HomePage = () => {
       <Box sx={{ py: 8, backgroundColor: '#f9f9f9' }}>
         <Container maxWidth="xl">
           <Box textAlign="center" mb={4}>
-            <Typography variant="h4" fontWeight="bold" gutterBottom>
-              <ScrollFloat
-                animationDuration={1}
-                ease='back.inOut(2)'
-                scrollStart='center bottom+=50%'
-                scrollEnd='bottom bottom-=40%'
-                stagger={0.03}
-              >
+            <Typography variant="h3" fontWeight="bold" ref={headingRef} gutterBottom>
                 Industries We Serve
-              </ScrollFloat>
             </Typography>
             <Box />
             <Typography variant="body1">
@@ -690,16 +649,8 @@ const HomePage = () => {
             px: 2,
           }}
         >
-          <Typography variant="h4" fontWeight="bold" gutterBottom>
-            <ScrollFloat
-              animationDuration={1}
-              ease='back.inOut(2)'
-              scrollStart='center bottom+=50%'
-              scrollEnd='bottom bottom-=40%'
-              stagger={0.03}
-            >
+          <Typography variant="h3" fontWeight="bold" ref={headingRef} gutterBottom>
               We Offer Excellence To Our Clients
-            </ScrollFloat>
           </Typography>
 
           <Box sx={{ mb: 4, width: '100%' }}>
@@ -762,16 +713,8 @@ const HomePage = () => {
       <Box sx={{ py: 8, backgroundColor: '#fff' }}>
         <Container maxWidth="lg">
           <Box textAlign="center" mb={4}>
-            <Typography variant="h4" fontWeight="bold" gutterBottom>
-              <ScrollFloat
-                animationDuration={1}
-                ease='back.inOut(2)'
-                scrollStart='center bottom+=50%'
-                scrollEnd='bottom bottom-=40%'
-                stagger={0.03}
-              >
+            <Typography variant="h4" fontWeight="bold" ref={headingRef} gutterBottom>
                 That Makes Us Unique
-              </ScrollFloat>
             </Typography>
             <Box />
             <Typography variant="body1">

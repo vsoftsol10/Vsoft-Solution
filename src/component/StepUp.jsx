@@ -130,7 +130,7 @@ const StepUp = () => {
                   mb: { xs: 2, sm: 3 }
                 }}
               >
-                🚀 StepUp - 75 Days Internship & Training Program
+                StepUp - 75 Days Internship & Training Program
               </Typography>
 
               <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
@@ -139,8 +139,8 @@ const StepUp = () => {
               </Typography>
 
               <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
-                🎓 <strong>Students</strong> who want to build their IT career<br />
-                👩‍💼 <strong>Women</strong> looking to restart their professional journey after a break
+                 <strong>Students</strong> who want to build their IT career<br />
+                 <strong>Women</strong> looking to restart their professional journey after a break
               </Typography>
 
               <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
@@ -156,7 +156,7 @@ const StepUp = () => {
                 ].map((item, idx) => (
                   <li key={idx}>
                     <Typography variant="body1" sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
-                      ✅ {item}
+                      {item}
                     </Typography>
                   </li>
                 ))}

@@ -19,10 +19,10 @@ const JobSlide = () => {
     }, []);
 
     const categories = [
-        { id: 'all', name: 'All Jobs', icon: '💼' },
-        { id: 'developer', name: 'Developer', icon: '💻' },
-        { id: 'designer', name: 'Designer', icon: '🎨' },
-        { id: 'marketing', name: 'Marketing', icon: '📈' }
+        { id: 'all', name: 'All Jobs'},
+        { id: 'developer', name: 'Developer'},
+        { id: 'designer', name: 'Designer'},
+        { id: 'marketing', name: 'Marketing'}
     ];
 
     const jobs = [
@@ -40,7 +40,7 @@ const JobSlide = () => {
                 '0.6+ years of React development experience',
                 'Strong knowledge of TypeScript and modern JavaScript',
                 'Experience with responsive design and CSS frameworks',
-                'Understanding of REST APIs and GraphQL'
+                'Understanding of REST APIs and JWT concetps',
             ],
             googleFormUrl: 'https://forms.gle/T2hYSTnVSNVgj9cB9'
         },
@@ -159,7 +159,6 @@ const JobSlide = () => {
                     <div>
                         <div className="sidebar">
                             <div className="sidebar-header">
-                                <span className="sidebar-icon">🔧</span>
                                 <h3 className="sidebar-title">Job Categories</h3>
                             </div>
                             <div className="category-list">
@@ -171,7 +170,6 @@ const JobSlide = () => {
                                         }`}
                                         onClick={() => setActiveCategory(category.id)}
                                     >
-                                        <span className="category-button-icon">{category.icon}</span>
                                         <span className="category-button-text">{category.name}</span>
                                     </button>
                                 ))}
@@ -201,7 +199,7 @@ const JobSlide = () => {
                                     <div className="job-header">
                                         <h3 className="job-title">{job.title}</h3>
                                         <p className="job-location">
-                                            📍 {job.location}
+                                             {job.location}
                                         </p>
                                         <div className="job-meta">
                                             <span>{job.experience}</span>
@@ -261,7 +259,7 @@ const JobSlide = () => {
                         <div className="modal-header">
                             <div>
                                 <h2 className="modal-title">{selectedJob.title}</h2>
-                                <p className="modal-location">📍 {selectedJob.location}</p>
+                                <p className="modal-location"> {selectedJob.location}</p>
                             </div>
                             <button 
                                 className="modal-close"
@@ -274,12 +272,12 @@ const JobSlide = () => {
                         <div className="modal-body">
                             <div className="modal-main">
                                 <div className="section">
-                                    <h3 className="section-title">📋 Job Description</h3>
+                                    <h3 className="section-title">Job Description</h3>
                                     <p>{selectedJob.description}</p>
                                 </div>
 
                                 <div className="section">
-                                    <h3 className="section-title">📌 Requirements</h3>
+                                    <h3 className="section-title"> Requirements</h3>
                                     <ul className="requirements-list">
                                         {selectedJob.requirements.map((req, index) => (
                                             <li key={index} className="requirement-item">
@@ -291,7 +289,7 @@ const JobSlide = () => {
                                 </div>
 
                                 <div className="section">
-                                    <h3 className="section-title">🛠️ Required Skills</h3>
+                                    <h3 className="section-title"> Required Skills</h3>
                                     <div className="modal-skills">
                                         {selectedJob.skills.map((skill, index) => (
                                             <span key={index} className="modal-skill-tag">
@@ -305,11 +303,11 @@ const JobSlide = () => {
                             <div className="modal-sidebar">
                                 <div className="modal-info-card">
                                     <div className="info-item">
-                                        <span className="info-label">👨‍💼 Experience Level</span>
+                                        <span className="info-label"> Experience Level</span>
                                         <p className="info-value">{selectedJob.experience}</p>
                                     </div>
                                     <div className="info-item">
-                                        <span className="info-label">💼 Employment Type</span>
+                                        <span className="info-label"> Employment Type</span>
                                         <p className="info-value">{selectedJob.type}</p>
                                     </div>
 

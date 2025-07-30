@@ -214,13 +214,14 @@ const Product = () => {
             variant={isMobile ? "h6" : isTablet ? "h5" : "h4"} 
             color="rgba(255,255,255,0.8)" 
             sx={{ 
+              fontFamily: "cinzel",
               mb: { xs: 2, sm: 3, md: 4 }, 
               maxWidth: { xs: '100%', sm: '600px', md: '800px' }, 
               mx: 'auto',
               px: { xs: 2, sm: 0 }
             }}
           >
-            Smart Site Management for the Construction Industry
+            SMART SITE MANAGEMENT FOR THE CONSTRUCTION INDUSTRY
           </Typography>
           <Typography 
             variant="body1" 

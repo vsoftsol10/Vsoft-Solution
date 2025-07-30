@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './OurCulture.css';
 import {
   Box,
@@ -8,7 +8,7 @@ import {
   Grid,
   Link
 } from '@mui/material';
-import AnimatedContent from '../Animations/AnimatedContent';
+import { gsap } from 'gsap';
 import HomeIcon from '@mui/icons-material/Home';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import WebIcon from '@mui/icons-material/Language';
@@ -29,7 +29,20 @@ const OurCulture = () => {
   const [likedPosts, setLikedPosts] = useState(new Set());
   const vsoftPurple = '#803082';
   const vsoftGray = '#999999';
-
+  const headingRef = useRef();
+  
+      useEffect(() => {
+          gsap.fromTo(
+              headingRef.current,
+              { opacity: 0, y: 50 },
+              {
+                  opacity: 1,
+                  y: 0,
+                  duration: 1.9,
+                  ease: 'power3.out',
+              }
+          );
+      }, []);
   const culturePosts = [
     {
       id: 1,
@@ -40,7 +53,7 @@ const OurCulture = () => {
       likes: 45,
       comments: 12,
       description: "Women's Day is a special event | celebrating the strength, resilience, and brilliance of women in various fields of life.",
-      tags: ["WomenEmpowerment", "WomenLeadership", "Women'sRights", "WomenInTech"],
+      tags: ["#WomenEmpowerment", "#WomenLeadership", "#Women'sRights", "#WomenInTech"],
       category: "festival"
     },
     {
@@ -52,7 +65,7 @@ const OurCulture = () => {
       likes: 78,
       comments: 32,
       description: "Fun Friday is a day full of laughter, fun, and joyful moments. It's a day to share, laugh, and have a good time with friends and family.",
-      tags: ["Fun", "Laugh", "Joke", "Humor"],
+      tags: ["#Fun", "#Laugh", "#Joke", "#Humor"],
       category: "fun"
     },
     {
@@ -64,7 +77,7 @@ const OurCulture = () => {
       likes: 67,
       comments: 23,
       description: "Learning, Growing, and creating an impact every day at Vsoft Solutions! Cloud Internship!.",
-      tags: ["Cloud", "cloudintership", "Internship", "Excellence"],
+      tags: ["#Cloud", "#cloudintership", "#Internship", "#Excellence"],
       category: "awards"
     },
     {
@@ -76,7 +89,7 @@ const OurCulture = () => {
       likes: 89,
       comments: 21,
       description: "Successfully completed our SAP training workshop! Empowring our team with cutting-edge knowledge and skills. A very good session to initiate a creative technologies into Vsoft solutions at Tirunlveli !",
-      tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+      tags: ["#SAP", "#Workshop", "#saptechnology", "#Technology"],
       category: "festival"
     },
     {
@@ -88,7 +101,7 @@ const OurCulture = () => {
       likes: 109,
       comments: 31,
       description: "INTERSHIP ALERT at Vsoft Solutions! Ready to Move beyond the classroom",
-      tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+      tags: ["#fullstack", "#Workshop", "#intership", "#Technology"],
       category: "festival"
     },
     
@@ -113,7 +126,7 @@ const OurCulture = () => {
       likes: 189,
       comments: 61,
       description: "Intership Milestone Achieved! Proud to have successfully completed a 2 months Digital Marketing internship at Vsoft Solutions.",
-      tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+      tags: ["#SEO", "#digitalmarketing", "#metads", "#Technology", '#intership'],
       category: "festival"
     },
     {
@@ -125,7 +138,7 @@ const OurCulture = () => {
       likes: 149,
       comments: 31,
       description: "Full Stack Internship in Action at @vsoftsolutions!, From whiteboards to real-world applications - our talented interns are learning by doing.",
-      tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+      tags: ["#SAP", "#Workshop", "saptechnology", "Technology"],
       category: "festival"
     },
     {
@@ -137,7 +150,7 @@ const OurCulture = () => {
       likes: 89,
       comments: 68,
       description: "Intership Achivements Unlocked! Excited to share that I've successfully completed a 15 days Wordpress Development internship at Vsoft Solutions !",
-      tags: ["SAP", "Workshop", "saptechnology", "Technology"],
+      tags: ["#wordpress", "#Workshop", "#cms", "#Technology"],
       category: "festival"
     },
   ];
@@ -154,12 +167,12 @@ const OurCulture = () => {
 
   const getCategoryIcon = (category) => {
     switch (category) {
-      case 'festival': return '🎉';
-      case 'teambuilding': return '👥';
-      case 'awards': return '🏆';
-      case 'food': return '🍽️';
-      case 'fun': return '😄';
-      default: return '👥';
+      case 'festival': return '';
+      case 'teambuilding': return '';
+      case 'awards': return '';
+      case 'food': return '';
+      case 'fun': return '';
+      default: return '';
     }
   };
 
@@ -180,7 +193,7 @@ const OurCulture = () => {
         sx={{
           py: 10,
           color: '#fff',
-          height: '670px',
+          height: '550px',
           textAlign: 'center',
           backgroundImage: `url(${OfcTeam})`,
           backgroundSize: 'cover',
@@ -221,19 +234,8 @@ const OurCulture = () => {
               Our Culture
             </Typography>
           </Breadcrumbs>
-          <Typography variant="h2" fontWeight="bold">
-            <AnimatedContent
-              distance={180}
-              direction="horizontal"
-              reverse={false}
-              config={{ tension: 100, friction: 40 }}
-              initialOpacity={0.1}
-              animateOpacity
-              scale={1.5}
-              threshold={0.5}
-            >
+          <Typography variant="h2" fontWeight="bold" ref={headingRef}>
               Our Culture
-            </AnimatedContent>
           </Typography>
           <Typography variant="body1" paragraph>
             Work. Laugh. Grow.
@@ -255,12 +257,7 @@ const OurCulture = () => {
                   alt={post.title}
                   className="card-image"
                 />
-                <div
-                  className="category-icon"
-                  style={{ backgroundColor: getCategoryColor(post.category) }}
-                >
-                  {getCategoryIcon(post.category)}
-                </div>
+                
               </div>
 
               <div className="card-content">
@@ -290,7 +287,7 @@ const OurCulture = () => {
                         💬 <span>{post.comments}</span>
                       </button>
                     </div>
-                    <button className="action-btn share-btn">📤</button>
+                    
                   </div>
 
                   <div className="tags">
@@ -329,12 +326,7 @@ const OurCulture = () => {
                   alt={selectedPost.title}
                   className="modal-image"
                 />
-                <div
-                  className="modal-category-icon"
-                  style={{ backgroundColor: getCategoryColor(selectedPost.category) }}
-                >
-                  {getCategoryIcon(selectedPost.category)}
-                </div>
+               
               </div>
 
               <div className="modal-text-content">
@@ -355,7 +347,6 @@ const OurCulture = () => {
                       💬 <span>{selectedPost.comments} comments</span>
                     </button>
                   </div>
-                  <button className="share-button">📤 Share</button>
                 </div>
 
                 <div className="modal-tags">
@@ -402,6 +393,7 @@ const OurCulture = () => {
               <Box>
                 <Typography
                   variant="h1"
+                  ref={headingRef}
                   sx={{
                     fontSize: { xs: '3rem', md: '3rem' },
                     fontWeight: 700,

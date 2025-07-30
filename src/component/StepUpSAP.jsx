@@ -50,7 +50,7 @@ const StepUpSAP = () => {
                     <h3 className="section-subtitle">Professional SAP Basis Administration Training</h3>
 
                     <div className="tailor-made-section">
-                        <h4 className="tailor-title">🎯 Tailor Made For Each Student</h4>
+                        <h4 className="tailor-title">Tailor Made For Each Student</h4>
 
                         <div className="eligibility-card">
                             <h5>Eligibility:</h5>
@@ -67,7 +67,6 @@ const StepUpSAP = () => {
                     <div className="course-options">
                         <div className="course-card internship-card">
                             <div className="card-header">
-                                <div className="icon time-icon">⏰</div>
                                 <h3>Internship Program</h3>
                             </div>
                             <ul className="feature-list">
@@ -82,7 +81,6 @@ const StepUpSAP = () => {
 
                         <div className="course-card training-card">
                             <div className="card-header">
-                                <div className="icon verified-icon">✅</div>
                                 <h3>Complete Training</h3>
                             </div>
                             <ul className="feature-list">

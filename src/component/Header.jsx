@@ -63,106 +63,106 @@ function Header() {
 
   return (
     <header className="header">
-        <div className="header-container">
-          <div className="logo-container">
-            <a href="/home">
-              <img src={logo} alt="VSoft Solutions" className="logo-image" />
-            </a>
-          </div>
+      <div className="header-container">
+        <div className="logo-container">
+          <a href="/home">
+            <img src={logo} alt="VSoft Solutions" className="logo-image" />
+          </a>
+        </div>
 
-          {/* Mobile Overlay */}
-          {menuOpen && <div className="mobile-overlay" onClick={closeMenu}></div>}
+        {/* Mobile Overlay */}
+        {menuOpen && <div className="mobile-overlay" onClick={closeMenu}></div>}
 
-          <div className={`nav-wrapper ${menuOpen ? "menu-open" : ""}`}>
-            {/* Close button visible only on mobile */}
-            <button
-              className="close-menu-btn"
-              onClick={closeMenu}
-              aria-label="Close menu"
-            >
-              <span className="close-icon">×</span>
-            </button>
+        <div className={`nav-wrapper ${menuOpen ? "menu-open" : ""}`}>
+          {/* Close button visible only on mobile */}
+          <button
+            className="close-menu-btn"
+            onClick={closeMenu}
+            aria-label="Close menu"
+          >
+            <span className="close-icon">×</span>
+          </button>
 
-            <nav ref={navRef} className="navigation">
-              <ul className="nav-menu">
-                <li className="nav-item">
-                  <a href="/home" className="nav-link" onClick={closeMenu}>
-                    <b>Home</b>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="/about" className="nav-link" onClick={closeMenu}>
-                    <b>About us</b>
-                  </a>
-                </li>
-                <li className="nav-item">
+          <nav ref={navRef} className="navigation">
+            <ul className="nav-menu">
+              <li className="nav-item">
+                <a href="/home" className="nav-link" onClick={closeMenu}>
+                  <b>Home</b>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/about" className="nav-link" onClick={closeMenu}>
+                  <b>About us</b>
+                </a>
+              </li>
+              {/* <li className="nav-item">
                   <a href="/product" className="nav-link" onClick={closeMenu}>
                     <b>Products</b>
                   </a>
-                </li>
-                <li className="nav-item dropdown-parent">
-                  <button
-                    className="nav-link dropdown-toggle"
-                    onClick={() => toggleDropdown(0)}
-                    aria-expanded={activeDropdown === 0}
-                  >
-                    <b>Our Services <span className="dropdown-arrow">▼</span></b>
-                  </button>
-                  <ul className={`dropdown-menu ${activeDropdown === 0 ? "show" : ""}`}>
-                    {serviceOptions[0].dropdown.map((item, index) => (
-                      <li key={index} className="dropdown-item">
-                        <a
-                          href={item.path}
-                          className="dropdown-link"
-                          onClick={handleDropdownLinkClick}
-                        >
-                          <b>{item.name}</b>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-                <li className="nav-item">
-                  <a href="/career" className="nav-link" onClick={closeMenu}>
-                    <b>Career</b>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="/culture" className="nav-link" onClick={closeMenu}>
-                    <b>Our Culture</b>
-                  </a>
-                </li>
-                <li className="nav-item contact-btn-container">
-                  <a href="/contact" className="contact-btn" onClick={closeMenu}>
-                    Contact us
-                  </a>
-                </li>
-                <li className="nav-item stepup-btn-container">
-                  <a href="/stepup" onClick={closeMenu}>
-                    <img
-                      src={StepUp}
-                      alt="StepUp"
-                      className="stepup-image"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          <div className="hamburger-container">
-            <button
-              className={`hamburger-btn ${menuOpen ? "active" : ""}`}
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-            >
-              <span className="hamburger-bar"></span>
-              <span className="hamburger-bar"></span>
-              <span className="hamburger-bar"></span>
-            </button>
-          </div>
+                </li> */}
+              <li className="nav-item dropdown-parent">
+                <button
+                  className="nav-link dropdown-toggle"
+                  onClick={() => toggleDropdown(0)}
+                  aria-expanded={activeDropdown === 0}
+                >
+                  <b>Our Services <span className="dropdown-arrow">▼</span></b>
+                </button>
+                <ul className={`dropdown-menu ${activeDropdown === 0 ? "show" : ""}`}>
+                  {serviceOptions[0].dropdown.map((item, index) => (
+                    <li key={index} className="dropdown-item">
+                      <a
+                        href={item.path}
+                        className="dropdown-link"
+                        onClick={handleDropdownLinkClick}
+                      >
+                        <b>{item.name}</b>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+              <li className="nav-item">
+                <a href="/career" className="nav-link" onClick={closeMenu}>
+                  <b>Career</b>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/culture" className="nav-link" onClick={closeMenu}>
+                  <b>Our Culture</b>
+                </a>
+              </li>
+              <li className="nav-item contact-btn-container">
+                <a href="/contact" className="contact-btn" onClick={closeMenu}>
+                  Contact us
+                </a>
+              </li>
+              <li className="nav-item stepup-btn-container">
+                <a href="/stepup" onClick={closeMenu}>
+                  <img
+                    src={StepUp}
+                    alt="StepUp"
+                    className="stepup-image"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </header>
+
+        <div className="hamburger-container">
+          <button
+            className={`hamburger-btn dots-btn ${menuOpen ? "active" : ""}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+          </button>
+        </div>
+      </div>
+    </header>
   );
 }
 
